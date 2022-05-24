@@ -133,7 +133,7 @@
                     </div>
                     <div class="orders__item-wrap">
 
-                        <div class="orders__item orders__new-order" id="1">
+                        <div class="orders__item" id="1">
                             <div class="orders__warning-wrap">
                                 <div class="orders__warning">
                                     <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
@@ -146,8 +146,8 @@
                                     </span>
                                 </div>
                                 <div class="orders__btn-wrap">
-                                    <button class="btn btn__cancel js-cancel">Отменить</button>
-                                    <button class="btn  btn__confirm js-confirm">Подтвердить</button>
+                                    <button class="btn btn__cancel js-cancel js-open">Отменить</button>
+                                    <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
                                 </div>
                             </div>
 
@@ -155,7 +155,7 @@
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations">новый заказ</div>
+                                        <div class="orders__variations orders__new-order">новый заказ</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -170,7 +170,7 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__new-order" id="2">
+                        <div class="orders__item" id="2">
                             <div class="orders__warning-wrap">
                                 <div class="orders__warning">
                                     <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
@@ -183,8 +183,8 @@
                                     </span>
                                 </div>
                                 <div class="orders__btn-wrap">
-                                    <button class="btn btn__cancel js-cancel">Отменить</button>
-                                    <button class="btn  btn__confirm js-confirm">Подтвердить</button>
+                                    <button class="btn btn__cancel js-cancel js-open">Отменить</button>
+                                    <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
                                 </div>
                             </div>
 
@@ -192,7 +192,7 @@
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations">новый заказ</div>
+                                        <div class="orders__variations orders__new-order">новый заказ</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -207,12 +207,12 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__framed" id="3">
+                        <div class="orders__item" id="3">
                             <div class="orders__content">
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations">оформлен</div>
+                                        <div class="orders__variations orders__framed">оформлен</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -227,12 +227,12 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__awaiting" id="4">
+                        <div class="orders__item" id="4">
                             <div class="orders__content">
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations new-order">ожидает получения</div>
+                                        <div class="orders__variations orders__awaiting">ожидает получения</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -247,12 +247,12 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__completed" id="5">
+                        <div class="orders__item" id="5">
                             <div class="orders__content">
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations new-order">завершён</div>
+                                        <div class="orders__variations orders__completed">завершён</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -268,12 +268,12 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__in-processing" id="6">
+                        <div class="orders__item" id="6">
                             <div class="orders__content">
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations new-order">в обработке</div>
+                                        <div class="orders__variations orders__in-processing">в обработке</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -288,12 +288,12 @@
                             </div>
                         </div>
 
-                        <div class="orders__item orders__canceled" id="7">
+                        <div class="orders__item" id="7">
                             <div class="orders__content">
                                 <div class="orders__box">
                                     <div class="orders__row">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
-                                        <div class="orders__variations new-order">в обработке</div>
+                                        <div class="orders__variations orders__canceled">отменён</div>
                                     </div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
@@ -408,7 +408,7 @@
                 <p class="popup-text">После подтверждения вы сможете приступить к сборке заказа</p>
                 <div class="orders__popup-btn-wrap">
                     <button class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
-                    <button class="btn btn-popup popup-btn__confirm js-order-accept">Да, подтвердить!</button>
+                    <button class="btn btn-popup popup-btn__confirm js-order-accept js-popup-confirm">Да, подтвердить!</button>
                 </div>
             </div>
         </div>
@@ -424,7 +424,7 @@
                 <p class="popup-text">После отмены вы не сможете вернуть заказ в работу</p>
                 <div class="orders__popup-btn-wrap">
                     <button class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
-                    <button class="btn btn-popup popup-btn__cancellations js-order-accept">Да, отменить заказ</button>
+                    <button class="btn btn-popup popup-btn__cancellations js-order-accept js-popup-remove">Да, отменить заказ</button>
                 </div>
             </div>
         </div>

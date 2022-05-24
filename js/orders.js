@@ -1,32 +1,36 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
   // Инпут выбора даты
-  new AirDatepicker("#date-picker-orders", {
-    range: true,
-    multipleDatesSeparator: " - ",
-  });
+  if (document.getElementById("date-picker-orders")) {
+    new AirDatepicker("#date-picker-orders", {
+      range: true,
+      multipleDatesSeparator: " - ",
+    });
+  }
 
-  const delegate = (el) => {
-    el = el.target;
-    // Сортировка заказов
-    if (el.closest(".orders__sorting-btn")) {
-      el.closest(".orders__sorting-btn").classList.toggle("active");
-    }
-    if (el.closest(".order__sorting-list")) {
-      let allEl = el.closest(".order__sorting-list").querySelectorAll(".orders__sorting-item");
-      allEl.forEach((e) => {
-        e.classList.remove("active");
-      });
-    }
-    if (el.classList.contains("orders__sorting-item")) {
-      el.classList.add("active");
-      document.querySelector(".orders__text-btn").innerText = el.innerText;
-    }
-    if (!el.closest(".orders__sorting-btn")) {
-      document.querySelector(".orders__sorting-btn").classList.remove("active");
-    }
-  };
-  document.addEventListener("click", delegate);
+  if (document.querySelector(".orders__sorting-btn")) {
+    const delegate = (el) => {
+      el = el.target;
+      // Сортировка заказов
+      if (el.closest(".orders__sorting-btn")) {
+        el.closest(".orders__sorting-btn").classList.toggle("active");
+      }
+      if (el.closest(".order__sorting-list")) {
+        let allEl = el.closest(".order__sorting-list").querySelectorAll(".orders__sorting-item");
+        allEl.forEach((e) => {
+          e.classList.remove("active");
+        });
+      }
+      if (el.classList.contains("orders__sorting-item")) {
+        el.classList.add("active");
+        document.querySelector(".orders__text-btn").innerText = el.innerText;
+      }
+      if (!el.closest(".orders__sorting-btn")) {
+        document.querySelector(".orders__sorting-btn").classList.remove("active");
+      }
+    };
+    document.addEventListener("click", delegate);
+  }
 
   // Таймер JS
   const composeTimer = () => {
@@ -86,53 +90,43 @@ document.addEventListener("DOMContentLoaded", () => {
   composeTimer();
 });
 
-const delegatModalWindows = (el, btn, popup, item, modalBtn) => {
-  el = el.target;
-  const overlay = document.querySelector(".overlay");
+// Модальные окна принять или отменить заказ
+const delegatModalWindows = (el, accept = false, acceptPopup = false, closeModal = false) => {
+  let overlay = document.querySelector(".overlay"),
+    succesPopup = document.querySelector(".orders__succes-popup"),
+    сancelPopup = document.querySelector(".orders__сancellations-popup");
 
-  if (el.closest(btn)) {
-    document.querySelector(popup).classList.add("active");
+  if (accept) {
+    el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
     overlay.classList.add("active");
     document.body.classList.add("no-scroll");
-
-    // получаю id товара  и присваиваю его кнопке
-    el.closest(item).id;
-    document.querySelector(modalBtn).id = el.closest(item).id;
+    el.classList.contains("js-confirm")
+      ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
+      : (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id);
   }
-  if (el.closest(".js-orders__close, .overlay, .js-order-accept, .js-order-сancel")) {
-    console.log(modalBtn);
-    document.querySelector(popup).classList.remove("active");
+  if (closeModal || acceptPopup) {
+    succesPopup.classList.remove("active");
+    сancelPopup.classList.remove("active");
     overlay.classList.remove("active");
     document.body.classList.remove("no-scroll");
+    if (el.classList.contains("js-popup-confirm")) {
+      // обработчик для подтверждения заказа
+      console.log("confirm");
+    } else if (el.classList.contains("js-popup-remove")) {
+      // обработчик для отмены заказа
+      console.log("delete");
+    }
   }
 };
 
 document.addEventListener("click", (el) => {
-  if (el.closest(".js-confirm")) {
-    delegatModalWindows(el, ".js-confirm", ".orders__succes-popup", ".orders__item", ".js-order-accept");
-  } else if (el.closest(".js-cancel")) {
-    delegatModalWindows(el, ".js-cancel", ".orders__сancellations-popup", ".orders__item", ".js-order-accept");
-  }
+  el = el.target;
+  if (el.classList.contains("js-open")) delegatModalWindows(el, true);
+  if (el.closest(".js-orders__close, .overlay")) delegatModalWindows(el, false, false, true);
+  if (el.closest(".js-order-accept")) delegatModalWindows(el, false, true);
 });
 
-//   // Отмена заказа
-//   if (el.closest(".js-cancel")) {
-//     document.querySelector(".orders__сancellations-popup").classList.add("active");
-//     overlay.classList.add("active");
-//     document.body.classList.add("no-scroll")
-
-//     // получаю id товара  и присваиваю его кнопке
-//     el.closest(".orders__item").id;
-//     document.querySelector(".js-order-сancel").id = el.closest(".orders__item").id;
-//   }
-//   if (el.closest(".js-orders__close, .overlay, js-order-сancel")) {
-//     document.querySelector(".orders__сancellations-popup").classList.remove("active");
-//     overlay.classList.remove("active");
-//     document.body.classList.remove("no-scroll")
-//   }
-// }
-// document.addEventListener("click", delegatModalWindows);
-
+// Делегирование модалок
 // const delegatModalWindows = (el) => {
 //   el = el.target;
 //   const overlay = document.querySelector(".overlay");
