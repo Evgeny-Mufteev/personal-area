@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>магазин данные</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/lk_global.css">
+    <link rel="stylesheet" href="css/storeinfo.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="header__mobile-right">
+                        <div class="header__mobile-wrap">
+                            <div class="header__mobile-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="header-top__logo">
+                            <a href="javascript:void(0)" class="header-top__logo-link">
+                                <img src="img/logo.svg" alt="logotype">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-top__info">
+                        <div class="header-top__menu">
+                            <ul class="header-top__list">
+                                <li class="header-top__item">Инструкции</li>
+                                <li class="header-top__item">Связаться с администратором</li>
+                                <li class="header-top__item">
+                                    <svg class="svg-icon icon-exit">
+                                        <use xlink:href="css/sprite.svg#exit"></use>
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-bottom__menu">
+                        <ul class="header-bottom__list">
+                            <li class="header-bottom__item"><a href="orders.html" class="header-bottom__link">Заказы</a></li>
+                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
+                            <li class="header-bottom__item">
+                                <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
+                            </li>
+                            <li class="header-bottom__item">
+                                <a href="javascript:void(0)" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                            </li>
+                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link active">Информация о магазине</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--mobile-menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__content">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="orders.html">Заказы</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Товары и акции</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg> 
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="notifications.html">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item active">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Информация о магазине</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-menu__info">
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Инструкции</a>
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Связаться с администратором</a>
+                </div>
+            </div>
+            <!--mobile-menu -->
+        </header>
+        <main>
+            <section class="infoblock">
+                <div class="container">
+                    <h1 class="mobile-title">Информация о магазине</h1>
+                    <form class="infoblock__form" action="#0" autocomplete="off">
+
+                        <div class="infoblock__box-wrap">
+                            <div class="infoblock__box">
+                                <h2 class="infoblock__title">Личные данные</h2>
+    
+                                <div class="infoblock__holder">
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="full-name">Название магазина:</label>
+                                            <input class="infoblock__input"  id="full-name" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="email">Email:</label>
+                                            <input class="infoblock__input"  id="email" type="email" placeholder="your@email.ru">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class="icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="schedule:">График работы:</label>
+                                            <input class="infoblock__input"  id="schedule:" type="text" placeholder="9:00 - 22:00">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="number">Телефон:</label>
+                                            <input class="infoblock__input"  id="number" type="text" placeholder="+7 (123) 456-78-90">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="store-website">Сайт магазина:</label>
+                                            <input class="infoblock__input"  id="store-website" type="text" placeholder="https://indigo-trk.ru/">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <div class="infoblock__box">
+                                <h2 class="infoblock__title">Соцсети</h2>
+    
+                                <div class="infoblock__holder">
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="facebook">Facebook:</label>
+                                            <input class="infoblock__input"  id="facebook" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="instagram">Instagram:</label>
+                                            <input class="infoblock__input"  id="instagram" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="vk">Вконтакте:</label>
+                                            <input class="infoblock__input"  id="vk" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="youtube">Youtube:</label>
+                                            <input class="infoblock__input"  id="youtube" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+        
+                                    <div class="infoblock__input-wrap">
+                                        <div class="infoblock__row">
+                                            <label class="infoblock__label" for="telegram">Telegram:</label>
+                                            <input class="infoblock__input"  id="telegram" type="text" placeholder="-">
+                                        </div>
+                                        <div class="infoblock__edit">
+                                            <svg class=" icon-edit">
+                                                <use xlink:href="css/sprite.svg#icon-edit"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+
+                        <div class="infoblock__btn-wrap">
+                            <button class="btn btn__red">Сохранить изменения</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
+                        </div>
+
+                    </form>
+
+                    <form class="infoblock__settings" action="#0" autocomplete="off">
+
+                        <div class="infoblock__bigshop-banner">
+                            <div class="infoblock__banner-info">
+                                <h2 class="infoblock__subtitle">Баннер магазина</h2>
+                                <div class="infoblock__subject-wrap">
+                                    <p class="infoblock__subject">Поддерживаемые форматы: <span>JPG, JPEG, PNG</span></p>
+                                    <p class="infoblock__subject">Рекомендуемый размер: <span>1320 х 308 px</span></p>
+                                </div>
+                                <div class="infoblock__innput-file-wrap">
+                                    <label class="infoblock__label-file" for="files">Загрузить</label>
+                                    <input class="infoblock__input-file"  type="file" id="files" name="files"  accept=".jpg, .jpeg, .png"/>
+                                    <ul class="list-files">
+                                        <li class="list-item">Файлы не выбран</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="infoblock__config">
+                                <div class="infoblock__main-photo-wrap">
+                                    <img src="img/plug_big.jpg" alt="Заглушка изображения">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="infoblock__description">
+                            <div class="infoblock__banner-info">
+                                <h2 class="infoblock__subtitle">Описание магазина</h2>
+                                <div class="infoblock__subject-wrap">
+                                    <p class="infoblock__subject">Максимальная длина: 600 символов</p>
+                                </div>
+                            </div>
+                            <div class="infoblock__config">
+                                <div class="infoblock__tagline-wrap">
+                                    <textarea class="infoblock__text" maxlength="600"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="infoblock__store-photos">
+                            <div class="infoblock__banner-info">
+                                <h2 class="infoblock__subtitle">Фотографии магазина</h2>
+                                <div class="infoblock__subject-wrap">
+                                    <p class="infoblock__subject">Поддерживаемые форматы: <span>JPG, JPEG, PNG</span></p>
+                                    <p class="infoblock__subject">Рекомендуемый размер: <span>624 х 496 px</span></p>
+                                </div>
+                                <div class="infoblock__innput-file-wrap">
+                                    <label class="infoblock__label-file" for="mini-img">Загрузить</label>
+                                    <input class="infoblock__input-file" type="file" name="files[]" id="mini-img" name="files" multiple="multiple" accept=".jpg, .jpeg, .png"/>
+                                    <ul class="list-files">
+                                        <li class="list-item">Файлы не выбран</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="infoblock__config">
+                                <div class="infoblock__mini-pgoto-wrap">
+                                    <div class="infoblock__mini-pgoto-inner">
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                    </div>
+                                    <div class="infoblock__mini-pgoto-inner">
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                    </div>
+                                    <div class="infoblock__mini-pgoto-inner">
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                    </div>
+                                    <div class="infoblock__mini-pgoto-inner">
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="infoblock__btn-wrap">
+                            <button class="btn btn__red">Сохранить изменения</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
+                        </div>
+
+                    </form>
+
+                    <form method="post" class="infoblock__password js-form-submit" action="#0" autocomplete="off">
+                        <div class="infoblock__container">
+                            <h2 class="infoblock__title">Смена пароля</h2>
+                            <p class="infoblock__mismatch">Пароли не совпадают</p>
+                            <p class="infoblock__match">Ваш пароль был изменен</p>
+
+                            <div class="infoblock__input-wrap js-border">
+                                <label class="infoblock__label" for="current-password">Текущий пароль:</label>
+                                <input class="infoblock__input _password js-current-password" id="current-password" type="password" placeholder="********">
+                                <div class="infoblock__passoword js-password"></div>
+                            </div>
+
+                            <div class="infoblock__input-wrap js-border">
+                                <label class="infoblock__label" for="new-password">Новый пароль:</label>
+                                <input class="infoblock__input _password js-new-password" id="new-password" type="password" placeholder="********">
+                                <div class="infoblock__passoword js-password"></div>
+                            </div>
+                        </div>
+
+                        <div class="infoblock__btn-wrap">
+                            <button class="btn btn__red" type="submit">Сохранить пароль</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__container">
+                    <div class="footer__info footer__block">
+                        <p class="footer__text">2004-2021 ©Индиго LIFE — интернет-магазин одежды, обуви и аксессуаров.</p>
+                        <p class="footer__text">Все права защищены</p>
+                    </div>
+                    <div class="footer__adress footer__block">
+                        <a href="mailto:info@shop.ru" class="footer__mail">info@shop.ru</a>
+                        <p class="footer__text">603003, Нижегородская область, г.Нижний Новгород, Казанское Шоссе, дом 11</p>
+                    </div>
+                    <div class="footer__connect footer__block">
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                    </div>
+                    <div class="footer__social footer__block">
+                        <div class="footer__social-inner">
+                            <div class="footer__link-wrap">
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-fb social">
+                                        <use xlink:href="css/sprite.svg#scial-fb"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-inst social">
+                                        <use xlink:href="css/sprite.svg#scial-inst"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-vk social">
+                                        <use xlink:href="css/sprite.svg#scial-vk"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-ytb social">
+                                        <use xlink:href="css/sprite.svg#scial-ytb"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="footer__text footer__copyright">
+                                Разработано в R-top
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Далее модальные окна если будут -->
+        <div class="toTop">
+            <svg class="anhor">
+                <use xlink:href="css/sprite.svg#anhor"></use>
+            </svg>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/storeinfo.js"></script>
+</body>
+</html>

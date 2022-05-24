@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Магазин уведомления</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/lk_global.css">
+    <link rel="stylesheet" href="css/orders.css">
+    <link rel="stylesheet" href="css/plugins/air-datepicker.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="header__mobile-right">
+                        <div class="header__mobile-wrap">
+                            <div class="header__mobile-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="header-top__logo">
+                            <a href="javascript:void(0)" class="header-top__logo-link">
+                                <img src="img/logo.svg" alt="logotype">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-top__info">
+                        <div class="header-top__menu">
+                            <ul class="header-top__list">
+                                <li class="header-top__item">Инструкции</li>
+                                <li class="header-top__item">Связаться с администратором</li>
+                                <li class="header-top__item">
+                                    <svg class="svg-icon icon-exit">
+                                        <use xlink:href="css/sprite.svg#exit"></use>
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-bottom__menu">
+                        <ul class="header-bottom__list">
+                            <li class="header-bottom__item"><a href="orders.html" class="header-bottom__link active">Заказы</a></li>
+                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
+                            <li class="header-bottom__item">
+                                <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
+                            </li>
+                            <li class="header-bottom__item">
+                                <a href="javascript:void(0)" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                            </li>
+                            <li class="header-bottom__item"><a href="storeinfo.html" class="header-bottom__link">Информация о магазине</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--mobile-menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__content">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item active">
+                            <a class="mobile-menu__link" href="orders.html">Заказы</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Товары и акции</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg> 
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="notifications.html">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="storeinfo.html">Информация о магазине</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-menu__info">
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Инструкции</a>
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Связаться с администратором</a>
+                </div>
+            </div>
+            <!--mobile-menu -->
+        </header>
+        <main>
+            <section class="orders">
+                <div class="container">
+                    <h1 class="mobile-title">Заказы</h1>
+                    <div class="orders__options">
+                        <div class="orders__sorting-btn">
+                            <span class="orders__text-btn">Все заказы
+                            </span>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                            <ul class="orders__sorting-list">
+                                <li class="orders__sorting-item">Все заказы</li>
+                                <li class="orders__sorting-item">Новый заказ</li>
+                                <li class="orders__sorting-item">В обработке</li>
+                                <li class="orders__sorting-item">Ожидает получения</li>
+                                <li class="orders__sorting-item">Завершён</li>
+                                <li class="orders__sorting-item">Отменён</li>
+                            </ul>
+                        </div>
+                        <div class="notices__date-picker">
+                            <div class="notices__input-wrap">
+                                <input class="notices__input" type="text" id="date-picker-orders" placeholder="выберите дату" readonly>
+                                <div class="notices__button">
+                                    <svg class="svg-icon icon-calendar">
+                                        <use xlink:href="css/sprite.svg#calendar"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders__item-wrap">
+
+                        <div class="orders__item orders__new-order" id="1">
+                            <div class="orders__warning-wrap">
+                                <div class="orders__warning">
+                                    <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
+                                    <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
+                                        <span class="orders__timer-desc">								
+                                            <span class="sale_counter_time_h">06</span>
+                                            <span class="sale_counter_time_back_del">:</span>
+                                            <span class="sale_counter_time_m">30</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="orders__btn-wrap">
+                                    <button class="btn btn__cancel js-cancel">Отменить</button>
+                                    <button class="btn  btn__confirm js-confirm">Подтвердить</button>
+                                </div>
+                            </div>
+
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations">новый заказ</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__new-order" id="2">
+                            <div class="orders__warning-wrap">
+                                <div class="orders__warning">
+                                    <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
+                                    <span class="orders__timer" data-days="0" data-hours="1" data-min="00" data-sec="00">
+                                        <span class="orders__timer-desc">								
+                                            <span class="sale_counter_time_h">06</span>
+                                            <span class="sale_counter_time_back_del">:</span>
+                                            <span class="sale_counter_time_m">30</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="orders__btn-wrap">
+                                    <button class="btn btn__cancel js-cancel">Отменить</button>
+                                    <button class="btn  btn__confirm js-confirm">Подтвердить</button>
+                                </div>
+                            </div>
+
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations">новый заказ</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__framed">
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations">оформлен</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__awaiting">
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations new-order">ожидает получения</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__completed">
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations new-order">завершён</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                    <div class="orders__refusal">Отказов: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__in-processing">
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations new-order">в обработке</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orders__item orders__canceled">
+                            <div class="orders__content">
+                                <div class="orders__box">
+                                    <div class="orders__row">
+                                        <div class="orders__name">Заказ <span>№12345678</span></div>
+                                        <div class="orders__variations new-order">в обработке</div>
+                                    </div>
+
+                                    <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                                    <div class="orders__amount">Позиций в заказе: <span>3</span></div>
+                                </div>
+                                <div class="orders__box">
+                                    <div class="orders__holder">
+                                        <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
+                                        <a href="javascript:void(0)" class="orders__view-order">Смотреть состав заказа</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination" data-pagination-num="1">
+                        <a class="btn-pagination" href="javascript:void(0)">Показать еще +</a>
+                        <div class="pagination__list">
+                            <ul>
+                                <li class="btn prev">
+                                    <a href="javascript:void(0)">
+                                        <svg class="svg-icon arrow-left">
+                                            <use xlink:href="css/sprite.svg#arrow-left"></use>
+                                        </svg>
+                                        <span>Назад</span>
+                                    </a>
+                                </li>
+                                <li class="numb"><a href="javascript:void(0)"><span>1</span></a></li>
+                                <li class="numb active"><span>2</span></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>3</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>4</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>5</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>...</span></a></li>
+                                <li class="btn next">
+                                    <a href="javascript:void(0)">
+                                        <span>Вперед</span>
+                                        <svg class="svg-icon arrow-right">
+                                            <use xlink:href="css/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                          <div style="clear: both"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__container">
+                    <div class="footer__info footer__block">
+                        <p class="footer__text">2004-2021 ©Индиго LIFE — интернет-магазин одежды, обуви и аксессуаров.</p>
+                        <p class="footer__text">Все права защищены</p>
+                    </div>
+                    <div class="footer__adress footer__block">
+                        <a href="mailto:info@shop.ru" class="footer__mail">info@shop.ru</a>
+                        <p class="footer__text">603003, Нижегородская область, г.Нижний Новгород, Казанское Шоссе, дом 11</p>
+                    </div>
+                    <div class="footer__connect footer__block">
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                    </div>
+                    <div class="footer__social footer__block">
+                        <div class="footer__social-inner">
+                            <div class="footer__link-wrap">
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-fb social">
+                                        <use xlink:href="css/sprite.svg#scial-fb"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-inst social">
+                                        <use xlink:href="css/sprite.svg#scial-inst"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-vk social">
+                                        <use xlink:href="css/sprite.svg#scial-vk"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-ytb social">
+                                        <use xlink:href="css/sprite.svg#scial-ytb"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="footer__text footer__copyright">
+                                Разработано в R-top
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Далее модальные окна если будут -->
+        <div class="overlay"></div>
+        <div class="toTop">
+            <svg class="anhor">
+                <use xlink:href="css/sprite.svg#anhor"></use>
+            </svg>
+        </div>
+
+        <!-- pop-up Подтверждение -->
+        <div class="orders__succes-popup">
+            <div class="orders__popup-inner">
+                <div class="orders__close js-orders__close">
+                    <svg class="svg-icon icon-close">
+                        <use xlink:href="css/sprite.svg#close"></use>
+                    </svg>
+                </div>
+                <h3 class="popup-title">Вы подтверждаете заказ?</h3>
+                <p class="popup-text">После подтверждения вы сможете приступить к сборке заказа</p>
+                <div class="orders__popup-btn-wrap">
+                    <button class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
+                    <button class="btn btn-popup popup-btn__confirm js-order-accept">Да, подтвердить!</button>
+                </div>
+            </div>
+        </div>
+        <!-- pop-up Отмена заказа -->
+        <div class="orders__сancellations-popup">
+            <div class="orders__popup-inner">
+                <div class="orders__close js-orders__close">
+                    <svg class="svg-icon icon-close">
+                        <use xlink:href="css/sprite.svg#close"></use>
+                    </svg>
+                </div>
+                <h3 class="popup-title">Вы уверены, что хотите отменить заказ?</h3>
+                <p class="popup-text">После отмены вы не сможете вернуть заказ в работу</p>
+                <div class="orders__popup-btn-wrap">
+                    <button class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
+                    <button class="btn btn-popup popup-btn__cancellations js-order-accept">Да, отменить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/plugins/air-datepicker.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>
