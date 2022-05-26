@@ -104,6 +104,7 @@
     align-items: center;
     background: #FFF4D7;
     padding: 12px 23px 14px;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .orders__warning {
@@ -529,8 +530,10 @@
 
 /* Стилизация радио кнопок */
 .orders-internal__radio {
-    display: none;
+    opacity: 0;
+    position: absolute;
 }
+
 .orders-internal__radio + label{
     display: block;
     width: 22px;
@@ -565,6 +568,39 @@
 .orders-internal__body-wrap {
     margin-bottom: 200px;
 }
+
+.orders-internal__ready-to-receive,
+.orders-internal__lack-goods {
+    display: none;
+}
+
+.orders-internal__ready-to-receive.active,
+.orders-internal__lack-goods.active {
+    display: block;
+}
+
+/* Скрываю блоки для нового заказа */
+.orders-internal__form.new-order .orders-internal__choose,
+.orders-internal__form.new-order .orders-internal__box  .orders__btn-wrap,
+.orders-internal__form.new-order .orders-internal__notice-wrap,
+.orders-internal__form.new-order .orders-internal__good-product {
+    display: none;
+}
+
+/* Скрываю блоки для заказа в обработке*/
+.orders-internal__form.in-processing .orders-internal__warning-wrap  {
+    display: none;
+}
+
+/* Скрываю блоки для других заказов */
+.orders-internal__form.order-ready .orders-internal__warning-wrap, 
+.orders-internal__form.order-ready .orders-internal__notice-wrap,
+.orders-internal__form.order-ready .orders-internal__box  .orders__btn-wrap,
+.orders-internal__form.order-ready .orders-internal__choose,
+.orders-internal__form.order-ready .orders-internal__good-product {
+    display: none;
+}
+
 
 /*END orders-internal */
 
@@ -635,7 +671,7 @@
         align-items: center;
     }
 
-    .orders__btn-wrap {
+    .orders-internal__box .orders__btn-wrap {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -646,6 +682,9 @@
         margin-right: 0;
     }
 
+    .orders-internal__body-wrap {
+        margin-bottom: 120px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -744,6 +783,43 @@
 }
 
 @media screen and (max-width: 481px) {
+
+    /* Модальные окна */
+    .orders__popup-inner {
+        width: 100%;
+        height: auto;
+        padding: 60px 13px 48px;
+    }
+
+    .popup-title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .popup-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 32px;
+    }
+
+    .orders__popup-btn-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .popup-btn__cancel {
+        padding: 14px;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    /*END Модальные окна */
 
     .orders__options {
         flex-direction: column;
@@ -848,5 +924,49 @@
     .orders__timer {
         margin-left: 0px;
     }
+
+    .orders__name {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+    }
     
+    .orders-internal__prices,
+    .orders-internal__prices span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .orders-internal__good-product {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .orders__btn-wrap {
+        margin-top: 20px;
+    }
+
+    .orders-internal__btn._gray {
+        padding: 0 0 11px;
+    }
+
+    .orders-internal__btn._green {
+        width: 100%;
+    }
+
+    .orders-internal__header,
+    .orders-internal__item,
+    .orders-internal__content {
+        padding: 10px 9px;
+    }
+
+    .orders-internal__content {
+        margin-top: 24px;
+    }
+
+    .orders-internal__warning-wrap .orders__btn-wrap {
+        margin-top: 8px;
+    }
 }

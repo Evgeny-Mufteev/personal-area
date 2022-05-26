@@ -88,79 +88,109 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   composeTimer();
-});
 
-// Модальные окна принять или отменить заказ
-const delegatModalWindows = (el, accept = false, acceptPopup = false, closeModal = false) => {
-  let overlay = document.querySelector(".overlay"),
-    succesPopup = document.querySelector(".orders__succes-popup"),
-    сancelPopup = document.querySelector(".orders__сancellations-popup");
+  // Модальные окна принять/отменить заказ
+  const delegatModalWindows = (el, accept = false, acceptPopup = false, closeModal = false) => {
+    let overlay = document.querySelector(".overlay"),
+      succesPopup = document.querySelector(".orders__succes-popup"),
+      сancelPopup = document.querySelector(".orders__сancellations-popup");
 
-  if (accept) {
-    el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
-    overlay.classList.add("active");
-    document.body.classList.add("no-scroll");
-    el.classList.contains("js-confirm")
-      ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
-      : (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id);
-  }
-  if (closeModal || acceptPopup) {
-    succesPopup.classList.remove("active");
-    сancelPopup.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-    if (el.classList.contains("js-popup-confirm")) {
-      // обработчик для подтверждения заказа
-      console.log("confirm");
-    } else if (el.classList.contains("js-popup-remove")) {
-      // обработчик для отмены заказа
-      console.log("delete");
+    if (accept) {
+      el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
+      overlay.classList.add("active");
+      document.body.classList.add("no-scroll");
+      el.classList.contains("js-confirm")
+        ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
+        : (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id);
     }
-  }
-};
+    if (closeModal || acceptPopup) {
+      succesPopup.classList.remove("active");
+      сancelPopup.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+      if (el.classList.contains("js-popup-confirm")) {
+        // обработчик для подтверждения заказа
+        console.log("confirm");
+      } else if (el.classList.contains("js-popup-remove")) {
+        // обработчик для отмены заказа
+        console.log("delete");
+      }
+    }
+  };
 
-document.addEventListener("click", (el) => {
-  el = el.target;
-  if (el.classList.contains("js-open")) delegatModalWindows(el, true);
-  if (el.closest(".js-orders__close, .overlay")) delegatModalWindows(el, false, false, true);
-  if (el.closest(".js-order-accept")) delegatModalWindows(el, false, true);
+  document.addEventListener("click", (el) => {
+    el = el.target;
+    if (el.classList.contains("js-open")) delegatModalWindows(el, true);
+    if (el.closest(".js-orders__close, .overlay")) delegatModalWindows(el, false, false, true);
+    if (el.closest(".js-order-accept")) delegatModalWindows(el, false, true);
+  });
+
+  // // Закрыть уведомление о заказе
+  // if (el.closest(".orders-internal__notice-close")) {
+  //   document.querySelector(".orders-internal__notice-wrap").remove();
+  // }
+
+  const delegateOrdersInternal = (el) => {
+    el = el.target;
+    if (el.classList.contains("_green")) {
+      const arrChecking = document.querySelectorAll("._added");
+      const arrNotChecking = document.querySelectorAll("._not-added");
+      const overlay = document.querySelector(".overlay");
+      let correctInput = false;
+      let inCorrect = false;
+      let allCorrect = false;
+
+      arrChecking.forEach((input) => {
+        if (input.checked) {
+          correctInput = true;
+        }
+      });
+
+      arrNotChecking.forEach((input) => {
+        if (input.checked) {
+          inCorrect = true;
+        } else {
+          inCorrect = false;
+          return;
+        }
+      });
+
+      let arrItems = document.forms.processing.querySelectorAll(".orders-internal__item");
+      arrItems.forEach((item) => {
+        let itemName = item.querySelector("._added").name;
+        if (!item.querySelector("input[name='" + itemName + "']:checked")) {
+          allCorrect = true;
+        }
+      });
+
+      if (allCorrect) {
+        document.forms.processing.querySelector(".js-submit").click();
+      } else if (correctInput) {
+        document.querySelector(".orders-internal__ready-to-receive").classList.add("active");
+        overlay.classList.add("active");
+        document.body.classList.add("no-scroll");
+      } else if (inCorrect) {
+        document.querySelector(".orders-internal__lack-goods").classList.add("active");
+        overlay.classList.add("active");
+        document.body.classList.add("no-scroll");
+      }
+    }
+    if(el.closest(".orders-internal__not-added") ){
+      el.closest(".orders-internal__item").classList.add("sraka");
+    } 
+    if(el.closest(".orders-internal__added")) {
+      el.closest(".orders-internal__item").classList.remove("sraka");
+    }
+  };
+
+  document.forms.processing.addEventListener("click", delegateOrdersInternal);
+
+  // Подсчет позиций в заказе
+  // const calcOrderItems = () => {
+  //   const itemWrap = document.querySelector(".orders-internal__item-wrap");
+  //   const arrItem = itemWrap.querySelectorAll(".orders-internal__item");
+  //   const countItem = document.querySelector(".orders__amount orders-internal__amounts span")
+  //   console.log(arrItem.length);
+  // }
+  // calcOrderItems()
 });
-
-// Делегирование модалок
-// const delegatModalWindows = (el) => {
-//   el = el.target;
-//   const overlay = document.querySelector(".overlay");
-
-//   // Подтверждение заказа
-//   if (el.closest(".js-confirm")) {
-//     document.querySelector(".orders__succes-popup").classList.add("active");
-//     overlay.classList.add("active");
-//     document.body.classList.add("no-scroll")
-
-//     // получаю id товара  и присваиваю его кнопке
-//     el.closest(".orders__item").id;
-//     document.querySelector(".js-order-accept").id = el.closest(".orders__item").id;
-//   }
-//   if (el.closest(".js-orders__close, .overlay, .js-order-accept")) {
-//     document.querySelector(".orders__succes-popup").classList.remove("active");
-//     overlay.classList.remove("active");
-//     document.body.classList.remove("no-scroll")
-//   }
-
-//   // Отмена заказа
-//   if (el.closest(".js-cancel")) {
-//     document.querySelector(".orders__сancellations-popup").classList.add("active");
-//     overlay.classList.add("active");
-//     document.body.classList.add("no-scroll")
-
-//         // получаю id товара  и присваиваю его кнопке
-//         el.closest(".orders__item").id;
-//         document.querySelector(".js-order-сancel").id = el.closest(".orders__item").id;
-//   }
-//   if (el.closest(".js-orders__close, .overlay, js-order-сancel")) {
-//     document.querySelector(".orders__сancellations-popup").classList.remove("active");
-//     overlay.classList.remove("active");
-//     document.body.classList.remove("no-scroll")
-//   }
-// }
-// document.addEventListener("click", delegatModalWindows);

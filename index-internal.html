@@ -101,54 +101,202 @@
             <!--mobile-menu -->
         </header>
         <main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <section class="orders-internal">
                 <div class="container">
-                    <!-- Если заказ НЕ подтвердили на странице заказов -->
-                    <div class="orders__warning-wrap orders-internal__warning-wrap">
-                        <div class="orders__warning">
-                            <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
-                            <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
-                                <span class="orders__timer-desc">								
-                                    <span class="sale_counter_time_h">06</span>
-                                    <span class="sale_counter_time_back_del">:</span>
-                                    <span class="sale_counter_time_m">30</span>
+                    <h1 class="mobile-title">Заказы</h1>
+                    <!-- Если заказ в обработке добавляем  in-processing-->
+                    <form class="orders-internal__form in-processing" name="processing" action="" autocomplete="off" id="2">
+                        <!-- Если заказ НЕ подтвердили на странице заказов -->
+                        <div class="orders__warning-wrap orders-internal__warning-wrap">
+                            <div class="orders__warning">
+                                <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
+                                <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
+                                    <span class="orders__timer-desc">								
+                                        <span class="sale_counter_time_h">06</span>
+                                        <span class="sale_counter_time_back_del">:</span>
+                                        <span class="sale_counter_time_m">30</span>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
+                            <div class="orders__btn-wrap">
+                                <button class="btn btn__cancel js-cancel js-open">Отменить</button>
+                                <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                            </div>
                         </div>
-                        <div class="orders__btn-wrap">
-                            <button class="btn btn__cancel js-cancel js-open">Отменить</button>
-                            <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                        <!-- Если заказ подтвердили  -->
+                        <div class="orders-internal__notice-wrap">
+                            <div class="orders-internal__notice-text">
+                                <p>Вам необходимо отметить товары, которые будут добавлены в заказ, а также те, которые отсутствуют на складе.</p>
+                                <p>Когда заказ будет собран, его необходимо передать в пункт выдачи, и после этого нажать на кнопу «Готов к получению»</p>
+                            </div>
+                            <div class="orders-internal__notice-close">
+                                <svg class="icon-close icon-orders-internal">
+                                    <use xlink:href="css/sprite.svg#close"></use>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Если заказ подтвердили  -->
-                    <div class="orders-internal__notice-wrap">
-                        <div class="orders-internal__notice-text">
-                            <p>Вам необходимо отметить товары, которые будут добавлены в заказ, а также те, которые отсутствуют на складе.</p>
-                            <p>Когда заказ будет собран, его необходимо передать в пункт выдачи, и после этого нажать на кнопу «Готов к получению»</p>
+                        
+                        <div class="orders-internal__title">
+                            <div class="orders__row orders-internal__row">
+                                <div class="orders__name">Заказ <span>№12345678</span></div>
+                                <div class="orders__variations orders__in-processing">в обработке</div>
+                            </div>
+                            <div class="orders__data orders-internal__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                         </div>
-                        <div class="orders-internal__notice-close">
-                            <svg class="icon-close icon-orders-internal">
-                                <use xlink:href="css/sprite.svg#close"></use>
-                            </svg>
-                        </div>
-                    </div>
 
-                    <form class="orders-internal__form" action="#0" autocomplete="off">
+                        <div class="orders-internal__body-wrap">
+                            <div class="orders-internal__body">
+                                <div class="orders-internal__item-wrap">
+                                    <div class="orders-internal__header">
+                                        <div class="orders-internal__name">наименование</div>
+                                        <div class="orders-internal__article">артикул</div>
+                                        <div class="orders-internal__color">цвет</div>
+                                        <div class="orders-internal__size">размер</div>
+                                        <div class="orders-internal__amount">количество</div>
+                                        <div class="orders-internal__price">стоимость</div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">добавлен</div>
+                                            <div class="orders-internal__not-added">отсутствует</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item4" id="item-added4" required/>
+                                                <label class="orders-internal__label" for="item-added4"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item4" id="item-not-added4" />
+                                                <label class="orders-internal__label" for="item-not-added4"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item5" id="item-added5" required/>
+                                                <label class="orders-internal__label" for="item-added5"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item5" id="item-not-added5"/>
+                                                <label class="orders-internal__label" for="item-not-added5"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item6" id="item-added6" required/>
+                                                <label class="orders-internal__label" for="item-added6"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item6" id="item-not-added6" />
+                                                <label class="orders-internal__label" for="item-not-added6"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orders-internal__footer">
+                                    <div class="orders-internal__content">
+                                        <div class="orders-internal__box">
+                                            <div class="orders-internal__holder">
+                                                <div class="orders__price orders-internal__prices">Сумма заказа: <span>1 609₽</span></div>
+                                                <div class="orders__amount orders-internal__amounts">Позиций в заказе: <span>3</span></div>
+                                                <div class="orders-internal__good-product">Готовых товаров к выдаче: <span>2</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="orders-internal__box">
+                                            <div class="orders__btn-wrap">
+                                                <button type="button" class="orders-internal__btn _gray">Отменить заказ</button>
+                                                <button type="button" class="orders-internal__btn _green">Готов к получению</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pop-up готов к получению -->
+                        <div class="orders-internal__ready-to-receive">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">Заказ готов к получению?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button  class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button type="submit" class="btn btn-popup popup-btn__confirm js-submit">Да, готов!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pop-up отсутствие товаров -->
+                        <div class="orders-internal__lack-goods">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">В вашем заказе отсутствуют все товары. Отменить заказ?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button type="submit" class="btn btn-popup popup-btn__cancellations js-submit">Да, отменить заказ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Если новый заказ добавляем  new-order-->
+                    <form class="orders-internal__form new-order" action="#0" autocomplete="off" id="1">
+                        <!-- Если заказ НЕ подтвердили на странице заказов -->
+                        <div class="orders__warning-wrap orders-internal__warning-wrap">
+                            <div class="orders__warning">
+                                <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
+                                <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
+                                    <span class="orders__timer-desc">								
+                                        <span class="sale_counter_time_h">06</span>
+                                        <span class="sale_counter_time_back_del">:</span>
+                                        <span class="sale_counter_time_m">30</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="orders__btn-wrap">
+                                <button class="btn btn__cancel js-cancel js-open">Отменить</button>
+                                <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                            </div>
+                        </div>
+                        <!-- Если заказ подтвердили  -->
+                        <div class="orders-internal__notice-wrap">
+                            <div class="orders-internal__notice-text">
+                                <p>Вам необходимо отметить товары, которые будут добавлены в заказ, а также те, которые отсутствуют на складе.</p>
+                                <p>Когда заказ будет собран, его необходимо передать в пункт выдачи, и после этого нажать на кнопу «Готов к получению»</p>
+                            </div>
+                            <div class="orders-internal__notice-close">
+                                <svg class="icon-close icon-orders-internal">
+                                    <use xlink:href="css/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
 
                         <div class="orders-internal__title">
                             <div class="orders__row orders-internal__row">
@@ -173,7 +321,6 @@
                                             <div class="orders-internal__not-added">отсутствует</div>
                                         </div>
                                     </div>
-    
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
                                         <div class="orders-internal__article">012345678</div>
@@ -181,18 +328,17 @@
                                         <div class="orders-internal__size">XS</div>
                                         <div class="orders-internal__amount">1 шт</div>
                                         <div class="orders-internal__price">12 500 </div>
-                                        <div class="orders-internal__choose">
+                                        <!-- <div class="orders-internal__choose">
                                             <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item" id="item-added" />
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item" id="item-added" required/>
                                                 <label class="orders-internal__label" for="item-added"></label>
                                             </div>
                                             <div class="orders-internal__not-added">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item" id="item-not-added" />
                                                 <label class="orders-internal__label" for="item-not-added"></label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
-        
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
                                         <div class="orders-internal__article">012345678</div>
@@ -200,18 +346,17 @@
                                         <div class="orders-internal__size">XS</div>
                                         <div class="orders-internal__amount">1 шт</div>
                                         <div class="orders-internal__price">12 500 </div>
-                                        <div class="orders-internal__choose">
+                                        <!-- <div class="orders-internal__choose">
                                             <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item2" id="item-added2" />
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item2" id="item-added2" required/>
                                                 <label class="orders-internal__label" for="item-added2"></label>
                                             </div>
                                             <div class="orders-internal__not-added">
-                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item2" id="item-not-added2" />
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item2" id="item-not-added2"/>
                                                 <label class="orders-internal__label" for="item-not-added2"></label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
-        
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
                                         <div class="orders-internal__article">012345678</div>
@@ -219,19 +364,18 @@
                                         <div class="orders-internal__size">XS</div>
                                         <div class="orders-internal__amount">1 шт</div>
                                         <div class="orders-internal__price">12 500 </div>
-                                        <div class="orders-internal__choose">
+                                        <!-- <div class="orders-internal__choose">
                                             <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item3" id="item-added3" />
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item3" id="item-added3" required/>
                                                 <label class="orders-internal__label" for="item-added3"></label>
                                             </div>
                                             <div class="orders-internal__not-added">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item3" id="item-not-added3" />
                                                 <label class="orders-internal__label" for="item-not-added3"></label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
-    
                                 <div class="orders-internal__footer">
                                     <div class="orders-internal__content">
                                         <div class="orders-internal__box">
@@ -241,54 +385,215 @@
                                                 <div class="orders-internal__good-product">Готовых товаров к выдаче: <span>2</span></div>
                                             </div>
                                         </div>
-                                        <div class="orders-internal__box">
+                                        <!-- <div class="orders-internal__box">
                                             <div class="orders__btn-wrap">
-                                                <button class="orders-internal__btn _gray js-cancel js-open">Отменить заказ</button>
-                                                <button class="orders-internal__btn _green js-confirm js-open">Готов к получению</button>
+                                                <button type="button" class="orders-internal__btn _gray">Отменить заказ</button>
+                                                <button type="button" class="orders-internal__btn _green">Готов к получению</button>
                                             </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pop-up готов к получению -->
+                        <!-- <div class="orders-internal__ready-to-receive">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">Заказ готов к получению?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button class="btn btn-popup popup-btn__confirm">Да, готов!</button>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- pop-up отсутствие товаров -->
+                        <div class="orders-internal__lack-goods">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">В вашем заказе отсутствуют все товары. Отменить заказ?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button class="btn btn-popup popup-btn__cancellations">Да, отменить заказ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- если заказа завершен  добавляем order-ready -->
+                    <form class="orders-internal__form order-ready" action="#0" autocomplete="off" id="3">
+                        <!-- Если заказ НЕ подтвердили на странице заказов -->
+                        <div class="orders__warning-wrap orders-internal__warning-wrap">
+                            <div class="orders__warning">
+                                <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
+                                <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
+                                    <span class="orders__timer-desc">								
+                                        <span class="sale_counter_time_h">06</span>
+                                        <span class="sale_counter_time_back_del">:</span>
+                                        <span class="sale_counter_time_m">30</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="orders__btn-wrap">
+                                <button class="btn btn__cancel js-cancel js-open">Отменить</button>
+                                <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                            </div>
+                        </div>
+                        <!-- Если заказ подтвердили  -->
+                        <div class="orders-internal__notice-wrap">
+                            <div class="orders-internal__notice-text">
+                                <p>Вам необходимо отметить товары, которые будут добавлены в заказ, а также те, которые отсутствуют на складе.</p>
+                                <p>Когда заказ будет собран, его необходимо передать в пункт выдачи, и после этого нажать на кнопу «Готов к получению»</p>
+                            </div>
+                            <div class="orders-internal__notice-close">
+                                <svg class="icon-close icon-orders-internal">
+                                    <use xlink:href="css/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="orders-internal__title">
+                            <div class="orders__row orders-internal__row">
+                                <div class="orders__name">Заказ <span>№12345678</span></div>
+                                <div class="orders__variations orders__completed">завершён</div>
+                            </div>
+                            <div class="orders__data orders-internal__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
+                        </div>
+
+                        <div class="orders-internal__body-wrap">
+                            <div class="orders-internal__body">
+                                <div class="orders-internal__item-wrap">
+                                    <div class="orders-internal__header">
+                                        <div class="orders-internal__name">наименование</div>
+                                        <div class="orders-internal__article">артикул</div>
+                                        <div class="orders-internal__color">цвет</div>
+                                        <div class="orders-internal__size">размер</div>
+                                        <div class="orders-internal__amount">количество</div>
+                                        <div class="orders-internal__price">стоимость</div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">добавлен</div>
+                                            <div class="orders-internal__not-added">отсутствует</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <!-- <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item7" id="item-added7" required/>
+                                                <label class="orders-internal__label" for="item-added7"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item7" id="item-not-added7" />
+                                                <label class="orders-internal__label" for="item-not-added7"></label>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <!-- <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item8" id="item-added8" required/>
+                                                <label class="orders-internal__label" for="item-added8"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item8" id="item-not-added8"/>
+                                                <label class="orders-internal__label" for="item-not-added8"></label>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
+                                        <div class="orders-internal__article">012345678</div>
+                                        <div class="orders-internal__color">тёмно-изумрудный</div>
+                                        <div class="orders-internal__size">XS</div>
+                                        <div class="orders-internal__amount">1 шт</div>
+                                        <div class="orders-internal__price">12 500 </div>
+                                        <!-- <div class="orders-internal__choose">
+                                            <div class="orders-internal__added">
+                                                <input class="orders-internal__radio _added" type="radio" name="selected-item9" id="item-added9" required/>
+                                                <label class="orders-internal__label" for="item-added9"></label>
+                                            </div>
+                                            <div class="orders-internal__not-added">
+                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item9" id="item-not-added9" />
+                                                <label class="orders-internal__label" for="item-not-added9"></label>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="orders-internal__footer">
+                                    <div class="orders-internal__content">
+                                        <div class="orders-internal__box">
+                                            <div class="orders-internal__holder">
+                                                <div class="orders__price orders-internal__prices">Сумма заказа: <span>1 609₽</span></div>
+                                                <div class="orders__amount orders-internal__amounts">Позиций в заказе: <span>3</span></div>
+                                                <div class="orders__refusal orders-internal__amounts">Отказов: <span>3</span></div>
+                                                <div class="orders-internal__good-product">Готовых товаров к выдаче: <span>2</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="orders-internal__box">
+                                            <!-- <div class="orders__btn-wrap">
+                                                <button type="button" class="orders-internal__btn _gray">Отменить заказ</button>
+                                                <button type="button" class="orders-internal__btn _green">Готов к получению</button>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <!-- pop-up готов к получению -->
+                        <!-- <div class="orders-internal__ready-to-receive">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">Заказ готов к получению?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button class="btn btn-popup popup-btn__confirm">Да, готов!</button>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- pop-up отсутствие товаров -->
+                        <!-- <div class="orders-internal__lack-goods">
+                            <div class="orders__popup-inner">
+                                <div class="orders__close js-orders__close">
+                                    <svg class="svg-icon icon-close">
+                                        <use xlink:href="css/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="popup-title">В вашем заказе отсутствуют все товары. Отменить заказ?</h3>
+                                <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
+                                <div class="orders__popup-btn-wrap">
+                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button class="btn btn-popup popup-btn__cancellations">Да, отменить заказ</button>
+                                </div>
+                            </div>
+                        </div> -->
                     </form>
                 </div>
             </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </main>
         <footer class="footer">
             <div class="container">
@@ -377,6 +682,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script src="js/plugins/air-datepicker.js"></script>
     <script src="js/main.js"></script>
