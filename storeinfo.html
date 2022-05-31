@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="header-top__logo">
-                            <a href="javascript:void(0)" class="header-top__logo-link">
+                            <a href="index.html" class="header-top__logo-link">
                                 <img src="img/logo.svg" alt="logotype">
                             </a>
                         </div>
@@ -49,7 +49,7 @@
                                 <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
                             </li>
                             <li class="header-bottom__item">
-                                <a href="javascript:void(0)" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                                <a href="reviews.html" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
                             </li>
                             <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link active">Информация о магазине</a></li>
                         </ul>
@@ -79,7 +79,7 @@
                             </svg>
                         </li>
                         <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="javascript:void(0)">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
@@ -137,8 +137,9 @@
                                     <div class="infoblock__input-wrap">
                                         <div class="infoblock__row">
                                             <label class="infoblock__label" for="schedule:">График работы:</label>
-                                            <input class="infoblock__input"  id="schedule:" type="text" placeholder="9:00 - 22:00">
-                                        </div>
+                                            <input class="infoblock__input work-time-from" min="08:00" max="22:00" type="time" value="10:00" required />
+                                            <input class="infoblock__input work-time-to" min="08:00" max="22:00" type="time" value="22:00" required />
+                                          </div>
                                         <div class="infoblock__edit">
                                             <svg class=" icon-edit">
                                                 <use xlink:href="css/sprite.svg#icon-edit"></use>
@@ -243,7 +244,7 @@
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red">Сохранить изменения</button>
-                            <button class="btn btn__white js-data-return">Отменить</button>
+                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
                         </div>
 
                     </form>
@@ -304,16 +305,16 @@
                             <div class="infoblock__config">
                                 <div class="infoblock__mini-pgoto-wrap">
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                        <input type="image" id="image" alt="Заглушка изображения" src="img/plug_mini.jpg" />
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                        <input type="image" id="image" alt="Заглушка изображения" src="img/plug_mini.jpg" />
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                        <input type="image" id="image" alt="Заглушка изображения" src="img/plug_mini.jpg" />
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
+                                        <input type="image" id="image" alt="Заглушка изображения" src="img/plug_mini.jpg" />
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +322,7 @@
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red">Сохранить изменения</button>
-                            <button class="btn btn__white js-data-return">Отменить</button>
+                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
                         </div>
 
                     </form>
@@ -347,7 +348,7 @@
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red" type="submit">Сохранить пароль</button>
-                            <button class="btn btn__white js-data-return">Отменить</button>
+                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
                         </div>
 
                     </form>

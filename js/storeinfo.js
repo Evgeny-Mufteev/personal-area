@@ -1,5 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
+
   // При клике на иконку фокусирование на input
   const handleFocusInput = () => {
     const form = document.querySelector(".infoblock__form");
@@ -35,9 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Показать изображение при загрузке
   let COUNT = 0;
   const showImages = (fileInput, containerImage, boolean) => {
+
     fileInput = document.querySelector(fileInput);
     let files = fileInput.files;
     let BoxContainerImage = document.querySelectorAll(containerImage);
+
     for (let i = 0, f; (f = files[i]); i++) {
       if (i == 4) break;
       if (!f.type.match("image.*")) continue;
@@ -92,56 +95,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // Показать скрыть пароль
   const showHidePassword = (icon) => {
     let arrPasswordIcon = document.querySelectorAll(icon);
-    arrPasswordIcon.forEach((el) => {
-      el.addEventListener("click", () => {
-        let passwordInput = el.previousElementSibling;
-        if (el.classList.contains("show")) {
-          passwordInput.type = "password";
-          el.classList.remove("show");
-        } else {
-          passwordInput.type = "text";
-          el.classList.add("show");
-        }
+    
+      arrPasswordIcon.forEach((el) => {
+        el.addEventListener("click", () => {
+          let passwordInput = el.previousElementSibling;
+          if (el.classList.contains("show")) {
+            passwordInput.type = "password";
+            el.classList.remove("show");
+          } else {
+            passwordInput.type = "text";
+            el.classList.add("show");
+          }
+        });
       });
-    });
   };
   showHidePassword(".js-password");
 
   // Проверка паролей и сохранение
-  const verifyPassword = () => {
+  const checkingVerifyPassword = () => {
     const formPassword = document.querySelector(".js-form-submit");
 
-    formPassword.addEventListener("submit", (el) => {
-      let currentPassword = document.querySelector(".js-current-password").value;
-      let newPassword = document.querySelector(".js-new-password").value;
-      let match = true;
+      formPassword.addEventListener("submit", (el) => {
+        let currentPassword = document.querySelector(".js-current-password").value;
+        let newPassword = document.querySelector(".js-new-password").value;
+        let match = true;
 
-      if (currentPassword != newPassword) {
-        document.querySelector(".infoblock__mismatch").classList.add("active");
-        document.querySelector(".infoblock__match").classList.remove("active");
-        const redBorder = document.querySelectorAll(".js-border");
+        
+        if (currentPassword != newPassword || currentPassword == "") {
+          document.querySelector(".infoblock__mismatch").classList.add("active");
+          document.querySelector(".infoblock__match").classList.remove("active");
+          const redBorder = document.querySelectorAll(".js-border");
 
-        for (let el of redBorder) el.classList.add("active");
+          for (let el of redBorder) el.classList.add("active");
 
-        match = false;
-        el.preventDefault();
-      } else {
-        document.querySelector(".infoblock__match").classList.add("active");
-        document.querySelector(".infoblock__mismatch").classList.remove("active");
-      }
-      return match;
-    });
+          match = false;
+          el.preventDefault();
+        } else {
+          document.querySelector(".infoblock__match").classList.add("active");
+          document.querySelector(".infoblock__mismatch").classList.remove("active");
+        }
+        return match;
+      });
   };
-  verifyPassword();
-
-  // Обновлнение страницы при клике на кнопку отменить
-  const handlePageUpdate = (el) => {
-    el = el.target;
-
-    if (el.closest(".js-data-return")) {
-      el.location.reload();
-    }
-  };
-  document.addEventListener("click", handlePageUpdate);
-
+  checkingVerifyPassword();
+  
 });

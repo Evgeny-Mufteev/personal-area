@@ -37,67 +37,6 @@
     background: var(--order-status-bg-red);
 }
 
-
-/* Сортировка */
-.orders__sorting-btn svg {
-    transform: rotate(90deg);
-}
-
-.orders__sorting-btn {
-    position: relative;
-    width: 191px;
-    height: 30px;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--white-color);
-    border: 1px solid var(--main-color-blue);
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: var(--main-color-blue);
-    padding: 0 9px;
-    cursor: pointer;
-    user-select: none;
-    margin-right: 24px;
-}
-
-.orders__sorting-list {
-    position: absolute;
-    top: 27px;
-    left: -1px;
-    width: 191px;
-    height: auto;
-    background: var(--white-color);
-    border: 1px solid var(--main-color-blue);
-    border-radius: 0px 0px 4px 4px;
-    color: var(--main-color-blue);
-    display: none;
-}
-
-.orders__sorting-item:hover {
-    background: #e7eaf6;
-}
-
-.orders__sorting-item {
-    border-bottom: 1px solid #D0D4E7;
-    padding: 8px 9px;
-}
-
-.orders__sorting-item:last-child {
-    border: none;
-}
-
-.orders__sorting-btn.active .orders__sorting-list {
-    display: block;
-}
-
-.orders__sorting-btn.active .chevron-right {
-    transform: rotate(270deg);
-}
-/* END Сортировка */
-
 .orders__warning-wrap {
     display: flex;
     justify-content: space-between;
@@ -411,7 +350,7 @@
     justify-content: space-between;
 }
 
-.orders-internal__added {
+.orders-internal__added-wrap {
     margin-right: 41px;
 }
 
@@ -459,14 +398,14 @@
     justify-content: center;
 }
 
-.orders-internal__added {
+.orders-internal__added-wrap {
     min-width: 64px;
     max-width: 64px;
     display: flex;
     justify-content: center;
 }
 
-.orders-internal__not-added {
+.orders-internal__not-added-wrap {
     min-width: 77px;
     max-width: 77px;
     display: flex;
@@ -526,12 +465,15 @@
     border: 1px solid #DFE2ED;
     border-radius: 8px;
     background: var(--white-color);
+    overflow: hidden;
+    position: relative;
 }
 
 /* Стилизация радио кнопок */
 .orders-internal__radio {
     opacity: 0;
     position: absolute;
+    cursor: pointer;
 }
 
 .orders-internal__radio + label{
@@ -540,6 +482,7 @@
     height: 22px;
     border: 1px solid var(--main-color-black);
     text-align: center;    
+    cursor: pointer;
 }
 
 .orders-internal__radio._added + label:before {
@@ -579,7 +522,7 @@
     display: block;
 }
 
-/* Скрываю блоки для нового заказа */
+/* Скрытие блоков для нового заказа */
 .orders-internal__form.new-order .orders-internal__choose,
 .orders-internal__form.new-order .orders-internal__box  .orders__btn-wrap,
 .orders-internal__form.new-order .orders-internal__notice-wrap,
@@ -587,12 +530,12 @@
     display: none;
 }
 
-/* Скрываю блоки для заказа в обработке*/
+/* Скрытие блоков  для заказа в обработке*/
 .orders-internal__form.in-processing .orders-internal__warning-wrap  {
     display: none;
 }
 
-/* Скрываю блоки для других заказов */
+/* Скрытие блоков  для других заказов */
 .orders-internal__form.order-ready .orders-internal__warning-wrap, 
 .orders-internal__form.order-ready .orders-internal__notice-wrap,
 .orders-internal__form.order-ready .orders-internal__box  .orders__btn-wrap,
@@ -601,8 +544,106 @@
     display: none;
 }
 
-
+.not-in-stock .orders-internal__name,
+.not-in-stock .orders-internal__article,
+.not-in-stock .orders-internal__color,
+.not-in-stock .orders-internal__size,
+.not-in-stock .orders-internal__amount,
+.not-in-stock .orders-internal__price {
+    color: #BDBDBD;
+    text-decoration-line: line-through;
+}
 /*END orders-internal */
+.orders-internal__item div span {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+
+/* Страница ЛК админ */
+.orders__row.shop__page {
+    margin-bottom: 10px;
+}
+
+.shop__name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--main-color-blue);
+    margin-right: 24px;
+    margin-bottom: 32px;
+}
+
+.shop__name a {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    color: #384B9A;
+}
+
+.orders__holder.shop-page {
+    justify-content: space-between;
+    height: 149px;
+}
+
+.shop-page__sorting-btn {
+    position: relative;
+    width: 366px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white-color);
+    border: 1px solid var(--main-color-blue);
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--main-color-blue);
+    padding: 0 9px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 24px;
+}
+
+.shop-page__sorting-list {
+    position: absolute;
+    top: 27px;
+    left: -1px;
+    width: 366px;
+    height: auto;
+    background: var(--white-color);
+    border: 1px solid var(--main-color-blue);
+    border-radius: 0px 0px 4px 4px;
+    color: var(--main-color-blue);
+    display: none;
+}
+
+.shop-page__sorting-btn.active .shop-page__sorting-list {
+    display: block;
+}
+
+.shop-page__sorting-item {
+    border-bottom: 1px solid #D0D4E7;
+    padding: 8px 9px;
+}
+
+.shop-page__sorting-item:hover {
+    background: #e7eaf6;
+}
+
+.shop-page__sorting-btn svg {
+    transform: rotate(90deg);
+}
+
+.shop-page__sorting-btn.active .chevron-right {
+    transform: rotate(270deg);
+}
+/*END  Страница ЛК админ */
 
 /* адаптив */
 @media screen and (max-width: 1349px) {
@@ -610,13 +651,15 @@
     /* .orders-internal__body-wrap, */
     .orders-internal__item-wrap {
         overflow: auto;
-        overflow-y: hidden;
+        width: 100%;
     }
 
     /* .orders-internal__body, */
     .orders-internal__item,
     .orders-internal__header {
         width: 1175px;
+        overflow: hidden;
+        position: relative;
     }
 
     .orders-internal__item-wrap::-webkit-scrollbar {
@@ -638,7 +681,16 @@
         max-width: 279px;
     }
 
+    /* Страница ЛК админ */
+    .orders__warning-wrap.shop-page {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .orders__warning-wrap.shop-page .orders__warning {
+        margin-bottom: 6px;
+    }
+    /*END  Страница ЛК админ */
 
 }
 
@@ -749,12 +801,12 @@
         max-width: 60px;
     }
 
-    .orders-internal__added {
+    .orders-internal__added-wrap {
         min-width: 55px;
         max-width: 55px;
     }
 
-    .orders-internal__not-added {
+    .orders-internal__not-added-wrap {
         min-width: 66px;
         max-width: 66px;
     }
@@ -762,6 +814,11 @@
     .orders-internal__radio + label {
         width: 18px;
         height: 18px;
+    }
+
+    .orders-internal__radio + label:before {
+        font-size: 19px;
+        line-height: 17px;
     }
 
     .orders-internal__data {
@@ -780,6 +837,45 @@
     .orders-internal__box {
         width: 100%;
     }
+
+    .orders__holder.shop-page {
+        height: auto;
+    }
+
+    .shop__name,
+    .shop__name a {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .orders__options.shop-page {
+        flex-direction: column;
+    }
+
+    .orders__options.shop-page .orders__sorting-btn,
+    .orders__options.shop-page .shop-page__sorting-btn,
+    .orders__options.shop-page .notices__date-picker {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .orders__options.shop-page .orders__sorting-btn,
+    .orders__options.shop-page .shop-page__sorting-btn {
+        margin-bottom: 12px;
+    }
+
+    .orders__options.shop-page  .shop-page__sorting-list,
+    .orders__options.shop-page .orders__sorting-list {
+        width: 100%;
+        left: 0;
+    }
+
+    .orders__options.shop-page .orders__sorting-btn.active .orders__sorting-list,
+    .orders__options.shop-page .shop-page__sorting-btn.active .shop-page__sorting-list {
+        z-index: 50;
+    }
+
 }
 
 @media screen and (max-width: 481px) {

@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="header-top__logo">
-                            <a href="javascript:void(0)" class="header-top__logo-link">
+                            <a href="index.html" class="header-top__logo-link">
                                 <img src="img/logo.svg" alt="logotype">
                             </a>
                         </div>
@@ -50,7 +50,7 @@
                                 <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
                             </li>
                             <li class="header-bottom__item">
-                                <a href="javascript:void(0)" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                                <a href="reviews.html" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
                             </li>
                             <li class="header-bottom__item"><a href="storeinfo.html" class="header-bottom__link">Информация о магазине</a></li>
                         </ul>
@@ -80,7 +80,7 @@
                             </svg>
                         </li>
                         <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="javascript:void(0)">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
@@ -155,61 +155,73 @@
                                         <div class="orders-internal__amount">количество</div>
                                         <div class="orders-internal__price">стоимость</div>
                                         <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">добавлен</div>
-                                            <div class="orders-internal__not-added">отсутствует</div>
+                                            <div class="orders-internal__added-wrap">добавлен</div>
+                                            <div class="orders-internal__not-added-wrap">отсутствует</div>
                                         </div>
                                     </div>
                                     <div class="orders-internal__item">
-                                        <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__name"><span>Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</span></div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный тёмно-изумрудный тёмно-изумрудный тёмно-изумрудный тёмно-изумрудный тёмноизумрудныйтёмноизумрудныйтёмноизумрудныйтёмноизумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500</span></div>
                                         <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item4" id="item-added4" required/>
-                                                <label class="orders-internal__label" for="item-added4"></label>
+                                            <div class="orders-internal__added-wrap">
+                                                <div class="orders-internal__added">
+                                                    <input class="orders-internal__radio _added" type="radio" name="selected-item4" id="item-added4" required/>
+                                                    <label class="orders-internal__label" for="item-added4"></label>
+                                                </div>
                                             </div>
-                                            <div class="orders-internal__not-added">
-                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item4" id="item-not-added4" />
-                                                <label class="orders-internal__label" for="item-not-added4"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="orders-internal__item">
-                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
-                                        <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item5" id="item-added5" required/>
-                                                <label class="orders-internal__label" for="item-added5"></label>
-                                            </div>
-                                            <div class="orders-internal__not-added">
-                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item5" id="item-not-added5"/>
-                                                <label class="orders-internal__label" for="item-not-added5"></label>
+                                            <div class="orders-internal__not-added-wrap">
+                                                <div class="orders-internal__not-added">
+                                                    <input class="orders-internal__radio _not-added" type="radio" name="selected-item4" id="item-not-added4" />
+                                                    <label class="orders-internal__label" for="item-not-added4"></label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="orders-internal__item">
-                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__name"><span>Название товара, Название бренда Название бренда</span></div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500</span></div>
                                         <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
-                                                <input class="orders-internal__radio _added" type="radio" name="selected-item6" id="item-added6" required/>
-                                                <label class="orders-internal__label" for="item-added6"></label>
+                                            <div class="orders-internal__added-wrap">
+                                                <div class="orders-internal__added">
+                                                    <input class="orders-internal__radio _added" type="radio" name="selected-item5" id="item-added5" required/>
+                                                    <label class="orders-internal__label" for="item-added5"></label>
+                                                </div>
                                             </div>
-                                            <div class="orders-internal__not-added">
-                                                <input class="orders-internal__radio _not-added" type="radio" name="selected-item6" id="item-not-added6" />
-                                                <label class="orders-internal__label" for="item-not-added6"></label>
+                                            <div class="orders-internal__not-added-wrap">
+                                                <div class="orders-internal__not-added">
+                                                    <input class="orders-internal__radio _not-added" type="radio" name="selected-item5" id="item-not-added5"/>
+                                                    <label class="orders-internal__label" for="item-not-added5"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-internal__item">
+                                        <div class="orders-internal__name"><span>Название товара, Название бренда Название бренда</span></div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
+                                        <div class="orders-internal__choose">
+                                            <div class="orders-internal__added-wrap">
+                                                <div class="orders-internal__added">
+                                                    <input class="orders-internal__radio _added" type="radio" name="selected-item6" id="item-added6" required/>
+                                                    <label class="orders-internal__label" for="item-added6"></label>
+                                                </div>
+                                            </div>
+                                            <div class="orders-internal__not-added-wrap">
+                                                <div class="orders-internal__not-added">
+                                                    <input class="orders-internal__radio _not-added" type="radio" name="selected-item6" id="item-not-added6" />
+                                                    <label class="orders-internal__label" for="item-not-added6"></label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +237,7 @@
                                         </div>
                                         <div class="orders-internal__box">
                                             <div class="orders__btn-wrap">
-                                                <button type="button" class="orders-internal__btn _gray">Отменить заказ</button>
+                                                <button type="button" class="orders-internal__btn _gray js-open">Отменить заказ</button>
                                                 <button type="button" class="orders-internal__btn _green">Готов к получению</button>
                                             </div>
                                         </div>
@@ -234,7 +246,7 @@
                             </div>
                         </div>
                         <!-- pop-up готов к получению -->
-                        <div class="orders-internal__ready-to-receive">
+                        <div class="orders-internal__ready-to-receive js-modal-popup">
                             <div class="orders__popup-inner">
                                 <div class="orders__close js-orders__close">
                                     <svg class="svg-icon icon-close">
@@ -244,13 +256,13 @@
                                 <h3 class="popup-title">Заказ готов к получению?</h3>
                                 <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
                                 <div class="orders__popup-btn-wrap">
-                                    <button  class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button type="button" class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
                                     <button type="submit" class="btn btn-popup popup-btn__confirm js-submit">Да, готов!</button>
                                 </div>
                             </div>
                         </div>
                         <!-- pop-up отсутствие товаров -->
-                        <div class="orders-internal__lack-goods">
+                        <div class="orders-internal__lack-goods js-modal-popup">
                             <div class="orders__popup-inner">
                                 <div class="orders__close js-orders__close">
                                     <svg class="svg-icon icon-close">
@@ -260,7 +272,7 @@
                                 <h3 class="popup-title">В вашем заказе отсутствуют все товары. Отменить заказ?</h3>
                                 <p class="popup-text">После изменения статуса вы сможете только отменить заказ</p>
                                 <div class="orders__popup-btn-wrap">
-                                    <button class="btn btn-popup popup-btn__cancel">Нет, вернуться назад</button>
+                                    <button type="button" class="btn btn-popup popup-btn__cancel js-orders__close">Нет, вернуться назад</button>
                                     <button type="submit" class="btn btn-popup popup-btn__cancellations js-submit">Да, отменить заказ</button>
                                 </div>
                             </div>
@@ -317,41 +329,41 @@
                                         <div class="orders-internal__amount">количество</div>
                                         <div class="orders-internal__price">стоимость</div>
                                         <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">добавлен</div>
-                                            <div class="orders-internal__not-added">отсутствует</div>
+                                            <div class="orders-internal__added-wrap">добавлен</div>
+                                            <div class="orders-internal__not-added-wrap">отсутствует</div>
                                         </div>
                                     </div>
                                     <div class="orders-internal__item">
-                                        <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__name"><span>Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</span></div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item" id="item-added" required/>
                                                 <label class="orders-internal__label" for="item-added"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item" id="item-not-added" />
                                                 <label class="orders-internal__label" for="item-not-added"></label>
                                             </div>
                                         </div> -->
                                     </div>
                                     <div class="orders-internal__item">
-                                        <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__name"><span>Название товара, Название бренда Название бренда</span></div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item2" id="item-added2" required/>
                                                 <label class="orders-internal__label" for="item-added2"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item2" id="item-not-added2"/>
                                                 <label class="orders-internal__label" for="item-not-added2"></label>
                                             </div>
@@ -359,17 +371,17 @@
                                     </div>
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item3" id="item-added3" required/>
                                                 <label class="orders-internal__label" for="item-added3"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item3" id="item-not-added3" />
                                                 <label class="orders-internal__label" for="item-not-added3"></label>
                                             </div>
@@ -428,7 +440,6 @@
                             </div>
                         </div>
                     </form>
-
                     <!-- если заказа завершен  добавляем order-ready -->
                     <form class="orders-internal__form order-ready" action="#0" autocomplete="off" id="3">
                         <!-- Если заказ НЕ подтвердили на странице заказов -->
@@ -480,23 +491,23 @@
                                         <div class="orders-internal__amount">количество</div>
                                         <div class="orders-internal__price">стоимость</div>
                                         <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">добавлен</div>
-                                            <div class="orders-internal__not-added">отсутствует</div>
+                                            <div class="orders-internal__added-wrap">добавлен</div>
+                                            <div class="orders-internal__not-added-wrap">отсутствует</div>
                                         </div>
                                     </div>
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Длинное Название товара, Очень Название бренда Название бренда Название брендаНазвание брендаНазвание бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item7" id="item-added7" required/>
                                                 <label class="orders-internal__label" for="item-added7"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item7" id="item-not-added7" />
                                                 <label class="orders-internal__label" for="item-not-added7"></label>
                                             </div>
@@ -504,17 +515,17 @@
                                     </div>
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item8" id="item-added8" required/>
                                                 <label class="orders-internal__label" for="item-added8"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item8" id="item-not-added8"/>
                                                 <label class="orders-internal__label" for="item-not-added8"></label>
                                             </div>
@@ -522,17 +533,17 @@
                                     </div>
                                     <div class="orders-internal__item">
                                         <div class="orders-internal__name">Название товара, Название бренда Название бренда</div>
-                                        <div class="orders-internal__article">012345678</div>
-                                        <div class="orders-internal__color">тёмно-изумрудный</div>
-                                        <div class="orders-internal__size">XS</div>
-                                        <div class="orders-internal__amount">1 шт</div>
-                                        <div class="orders-internal__price">12 500 </div>
+                                        <div class="orders-internal__article"><span>012345678</span></div>
+                                        <div class="orders-internal__color"><span>тёмно-изумрудный</span></div>
+                                        <div class="orders-internal__size"><span>XS</span></div>
+                                        <div class="orders-internal__amount"><span>1 шт</span></div>
+                                        <div class="orders-internal__price"><span>12 500 </span></div>
                                         <!-- <div class="orders-internal__choose">
-                                            <div class="orders-internal__added">
+                                            <div class="orders-internal__added-wrap">
                                                 <input class="orders-internal__radio _added" type="radio" name="selected-item9" id="item-added9" required/>
                                                 <label class="orders-internal__label" for="item-added9"></label>
                                             </div>
-                                            <div class="orders-internal__not-added">
+                                            <div class="orders-internal__not-added-wrap">
                                                 <input class="orders-internal__radio _not-added" type="radio" name="selected-item9" id="item-not-added9" />
                                                 <label class="orders-internal__label" for="item-not-added9"></label>
                                             </div>
@@ -651,7 +662,7 @@
         </div>
 
         <!-- pop-up Подтверждение -->
-        <div class="orders__succes-popup">
+        <div class="orders__succes-popup js-modal-popup">
             <div class="orders__popup-inner">
                 <div class="orders__close js-orders__close">
                     <svg class="svg-icon icon-close">
@@ -667,7 +678,7 @@
             </div>
         </div>
         <!-- pop-up Отмена заказа -->
-        <div class="orders__сancellations-popup">
+        <div class="orders__сancellations-popup js-modal-popup">
             <div class="orders__popup-inner">
                 <div class="orders__close js-orders__close">
                     <svg class="svg-icon icon-close">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Магазин уведомления</title>
+    <title>ЛК Админ</title>
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/lk_global.css">
     <link rel="stylesheet" href="css/orders.css">
@@ -30,8 +30,6 @@
                     <div class="header-top__info">
                         <div class="header-top__menu">
                             <ul class="header-top__list">
-                                <li class="header-top__item">Инструкции</li>
-                                <li class="header-top__item">Связаться с администратором</li>
                                 <li class="header-top__item">
                                     <svg class="svg-icon icon-exit">
                                         <use xlink:href="css/sprite.svg#exit"></use>
@@ -44,15 +42,10 @@
                 <div class="header-bottom">
                     <nav class="header-bottom__menu">
                         <ul class="header-bottom__list">
-                            <li class="header-bottom__item"><a href="index.html" class="header-bottom__link active">Заказы</a></li>
-                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
+                            <li class="header-bottom__item"><a href="LK_admin.html" class="header-bottom__link active">Все Заказы</a></li>
                             <li class="header-bottom__item">
-                                <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
+                                <a href="##" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
                             </li>
-                            <li class="header-bottom__item">
-                                <a href="reviews.html" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
-                            </li>
-                            <li class="header-bottom__item"><a href="storeinfo.html" class="header-bottom__link">Информация о магазине</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -62,40 +55,18 @@
                 <div class="mobile-menu__content">
                     <ul class="mobile-menu__list">
                         <li class="mobile-menu__item active">
-                            <a class="mobile-menu__link" href="index.html">Заказы</a>
+                            <a class="mobile-menu__link" href="LK_admin.html">Все заказы</a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
                         </li>
                         <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="javascript:void(0)">Товары и акции</a>
-                            <svg class="svg-icon chevron-right">
-                                <use xlink:href="css/sprite.svg#chevron-right"></use>
-                            </svg> 
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="notifications.html">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
-                            <svg class="svg-icon chevron-right">
-                                <use xlink:href="css/sprite.svg#chevron-right"></use>
-                            </svg>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
-                            <svg class="svg-icon chevron-right">
-                                <use xlink:href="css/sprite.svg#chevron-right"></use>
-                            </svg>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="storeinfo.html">Информация о магазине</a>
+                            <a class="mobile-menu__link" href="##">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
                         </li>
                     </ul>
-                </div>
-                <div class="mobile-menu__info">
-                    <a href="javascript:void(0)" class="mobile-menu__sublink">Инструкции</a>
-                    <a href="javascript:void(0)" class="mobile-menu__sublink">Связаться с администратором</a>
                 </div>
             </div>
             <!--mobile-menu -->
@@ -103,8 +74,8 @@
         <main>
             <section class="orders">
                 <div class="container">
-                    <h1 class="mobile-title">Заказы</h1>
-                    <div class="orders__options">
+                    <h1 class="mobile-title">Все заказы</h1>
+                    <div class="orders__options shop-page">
                         <div class="orders__sorting-btn">
                             <span class="orders__text-btn">Все заказы
                             </span>
@@ -120,6 +91,22 @@
                                 <li class="orders__sorting-item">Отменён</li>
                             </ul>
                         </div>
+
+                        <div class="shop-page__sorting-btn">
+                            <span class="shop-page__text-btn">Все магазины</span>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                            <ul class="shop-page__sorting-list">
+                                <li class="shop-page__sorting-item">Все магазины1</li>
+                                <li class="shop-page__sorting-item">Все магазины2</li>
+                                <li class="shop-page__sorting-item">Все магазины32</li>
+                                <li class="shop-page__sorting-item">Все магазины34</li>
+                                <li class="shop-page__sorting-item">Все магазины5</li>
+                                <li class="shop-page__sorting-item">Все магазины6</li>
+                            </ul>
+                        </div>
+
                         <div class="notices__date-picker">
                             <div class="notices__input-wrap">
                                 <input class="notices__input" type="text" id="date-picker-orders" placeholder="выберите дату" readonly>
@@ -131,10 +118,11 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="orders__item-wrap">
 
                         <div class="orders__item" id="1">
-                            <div class="orders__warning-wrap">
+                            <div class="orders__warning-wrap shop-page">
                                 <div class="orders__warning">
                                     <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
                                     <span class="orders__timer" data-days="0" data-hours="15" data-min="00" data-sec="00">
@@ -146,23 +134,23 @@
                                     </span>
                                 </div>
                                 <div class="orders__btn-wrap">
-                                    <button class="btn btn__cancel js-cancel js-open">Отменить</button>
-                                    <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                                    <button class="btn btn__cancel">Отменить</button>
+                                    <button class="btn  btn__confirm">Связаться с менеджером магазина</button>
                                 </div>
                             </div>
 
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__new-order">новый заказ</div>
                                     </div>
-
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -183,23 +171,24 @@
                                     </span>
                                 </div>
                                 <div class="orders__btn-wrap">
-                                    <button class="btn btn__cancel js-cancel js-open">Отменить</button>
-                                    <button class="btn  btn__confirm js-confirm js-open">Подтвердить</button>
+                                    <button class="btn btn__cancel">Отменить</button>
+                                    <button class="btn  btn__confirm">Связаться с менеджером магазина</button>
                                 </div>
                             </div>
 
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__new-order">новый заказ</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -210,16 +199,17 @@
                         <div class="orders__item" id="3">
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__framed">оформлен</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -230,16 +220,17 @@
                         <div class="orders__item" id="4">
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__awaiting">ожидает получения</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -250,17 +241,18 @@
                         <div class="orders__item" id="5">
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__completed">завершён</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                     <div class="orders__refusal">Отказов: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -271,16 +263,17 @@
                         <div class="orders__item" id="6">
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__in-processing">в обработке</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>
@@ -291,16 +284,17 @@
                         <div class="orders__item" id="7">
                             <div class="orders__content">
                                 <div class="orders__box">
-                                    <div class="orders__row">
+                                    <div class="orders__row shop__page">
                                         <div class="orders__name">Заказ <span>№12345678</span></div>
                                         <div class="orders__variations orders__canceled">отменён</div>
                                     </div>
+                                    <div class="shop__name">Магазин: <a href="javascript:void(0)">SHOPNAME</a></div>
 
                                     <div class="orders__data">Дата оформления: <span>15.05.2021, 18:32</span></div>
                                     <div class="orders__amount">Позиций в заказе: <span>3</span></div>
                                 </div>
                                 <div class="orders__box">
-                                    <div class="orders__holder">
+                                    <div class="orders__holder shop-page">
                                         <div class="orders__price">Сумма заказа: <span>1 609₽</span></div>
                                         <a href="index-internal.html" class="orders__view-order">Смотреть состав заказа</a>
                                     </div>

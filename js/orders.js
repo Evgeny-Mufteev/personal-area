@@ -1,5 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
+
   // Инпут выбора даты
   if (document.getElementById("date-picker-orders")) {
     new AirDatepicker("#date-picker-orders", {
@@ -8,29 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (document.querySelector(".orders__sorting-btn")) {
-    const delegate = (el) => {
-      el = el.target;
-      // Сортировка заказов
-      if (el.closest(".orders__sorting-btn")) {
-        el.closest(".orders__sorting-btn").classList.toggle("active");
-      }
-      if (el.closest(".order__sorting-list")) {
-        let allEl = el.closest(".order__sorting-list").querySelectorAll(".orders__sorting-item");
-        allEl.forEach((e) => {
-          e.classList.remove("active");
+  // Закрытие всех попапов
+  const closePopup = () => {
+    let arrPopup = document.querySelectorAll(".js-modal-popup"),
+      overlay = document.querySelector(".overlay"),
+      body = document.body,
+      check = false;
+
+        arrPopup.forEach((popup) => {
+          if (popup.classList.contains("active")) {
+            popup.classList.remove("active");
+            check = true;
+          }
+          if (check) {
+            overlay.classList.remove("active");
+            body.classList.remove("no-scroll");
+          }
         });
-      }
-      if (el.classList.contains("orders__sorting-item")) {
-        el.classList.add("active");
-        document.querySelector(".orders__text-btn").innerText = el.innerText;
-      }
-      if (!el.closest(".orders__sorting-btn")) {
-        document.querySelector(".orders__sorting-btn").classList.remove("active");
-      }
-    };
-    document.addEventListener("click", delegate);
-  }
+  };
 
   // Таймер JS
   const composeTimer = () => {
@@ -91,9 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Модальные окна принять/отменить заказ
   const delegatModalWindows = (el, accept = false, acceptPopup = false, closeModal = false) => {
+
     let overlay = document.querySelector(".overlay"),
-      succesPopup = document.querySelector(".orders__succes-popup"),
-      сancelPopup = document.querySelector(".orders__сancellations-popup");
+        succesPopup = document.querySelector(".orders__succes-popup"),
+        сancelPopup = document.querySelector(".orders__сancellations-popup");
 
     if (accept) {
       el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
@@ -101,21 +98,22 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("no-scroll");
       el.classList.contains("js-confirm")
         ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
-        : (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id);
+        : el.classList.contains("js-cancel")
+        ? (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
+        : "";
     }
+
     if (closeModal || acceptPopup) {
-      succesPopup.classList.remove("active");
-      сancelPopup.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.classList.remove("no-scroll");
+      closePopup();
       if (el.classList.contains("js-popup-confirm")) {
-        // обработчик для подтверждения заказа
+        // Будущий обработчик для подтверждения заказа
         console.log("confirm");
       } else if (el.classList.contains("js-popup-remove")) {
-        // обработчик для отмены заказа
+        // Будущий обработчик для отмены заказа
         console.log("delete");
       }
     }
+
   };
 
   document.addEventListener("click", (el) => {
@@ -125,72 +123,81 @@ document.addEventListener("DOMContentLoaded", () => {
     if (el.closest(".js-order-accept")) delegatModalWindows(el, false, true);
   });
 
-  // // Закрыть уведомление о заказе
-  // if (el.closest(".orders-internal__notice-close")) {
-  //   document.querySelector(".orders-internal__notice-wrap").remove();
-  // }
-
-  const delegateOrdersInternal = (el) => {
-    el = el.target;
-    if (el.classList.contains("_green")) {
-      const arrChecking = document.querySelectorAll("._added");
-      const arrNotChecking = document.querySelectorAll("._not-added");
+  // Проверка чекбоксов и показ модальныз оконо заказа
+  if (document.querySelector(".orders-internal__form")) {
+    const delegateOrdersInternal = (el) => {
+      el = el.target;
+      let successfulOrder = document.querySelector(".orders-internal__ready-to-receive");
+      let orderCancellation = document.querySelector(".orders-internal__lack-goods");
       const overlay = document.querySelector(".overlay");
-      let correctInput = false;
-      let inCorrect = false;
-      let allCorrect = false;
 
-      arrChecking.forEach((input) => {
-        if (input.checked) {
-          correctInput = true;
+      if (el.classList.contains("_green")) {
+        const arrChecking = document.querySelectorAll("._added");
+        const arrNotChecking = document.querySelectorAll("._not-added");
+
+        let correctInput = false;
+        let inCorrect = false;
+        let allCorrect = false;
+
+        arrChecking.forEach((input) => {
+          if (input.checked) {
+            correctInput = true;
+          }
+        });
+
+        arrNotChecking.forEach((input) => {
+          if (input.checked) {
+            inCorrect = true;
+          } else {
+            inCorrect = false;
+            return;
+          }
+        });
+
+        let arrItems = document.forms.processing.querySelectorAll(".orders-internal__item");
+        arrItems.forEach((item) => {
+          let itemName = item.querySelector("._added").name;
+          if (!item.querySelector("input[name='" + itemName + "']:checked")) {
+            allCorrect = true;
+          }
+        });
+
+        // открытие модалок
+        if (allCorrect) {
+          document.forms.processing.querySelector(".js-submit").click();
+        } else if (correctInput) {
+          successfulOrder.classList.add("active");
+          overlay.classList.add("active");
+          document.body.classList.add("no-scroll");
+        } else if (inCorrect) {
+          orderCancellation.classList.add("active");
+          overlay.classList.add("active");
+          document.body.classList.add("no-scroll");
         }
-      });
-
-      arrNotChecking.forEach((input) => {
-        if (input.checked) {
-          inCorrect = true;
-        } else {
-          inCorrect = false;
-          return;
-        }
-      });
-
-      let arrItems = document.forms.processing.querySelectorAll(".orders-internal__item");
-      arrItems.forEach((item) => {
-        let itemName = item.querySelector("._added").name;
-        if (!item.querySelector("input[name='" + itemName + "']:checked")) {
-          allCorrect = true;
-        }
-      });
-
-      if (allCorrect) {
-        document.forms.processing.querySelector(".js-submit").click();
-      } else if (correctInput) {
-        document.querySelector(".orders-internal__ready-to-receive").classList.add("active");
-        overlay.classList.add("active");
-        document.body.classList.add("no-scroll");
-      } else if (inCorrect) {
-        document.querySelector(".orders-internal__lack-goods").classList.add("active");
-        overlay.classList.add("active");
-        document.body.classList.add("no-scroll");
       }
-    }
-    if(el.closest(".orders-internal__not-added") ){
-      el.closest(".orders-internal__item").classList.add("sraka");
-    } 
-    if(el.closest(".orders-internal__added")) {
-      el.closest(".orders-internal__item").classList.remove("sraka");
-    }
-  };
 
-  document.forms.processing.addEventListener("click", delegateOrdersInternal);
+      // Товар отсутсвует на складе
+      if (el.closest(".orders-internal__not-added")) {
+        el.closest(".orders-internal__item").classList.add("not-in-stock");
+      }
+      if (el.closest(".orders-internal__added")) {
+        el.closest(".orders-internal__item").classList.remove("not-in-stock");
+      }
+      // Закрыть уведомление о заказе
+      if (el.closest(".orders-internal__notice-close")) {
+        document.querySelector(".orders-internal__notice-wrap").remove();
+      }
+    };
+    document.forms.processing.addEventListener("click", delegateOrdersInternal);
 
-  // Подсчет позиций в заказе
-  // const calcOrderItems = () => {
-  //   const itemWrap = document.querySelector(".orders-internal__item-wrap");
-  //   const arrItem = itemWrap.querySelectorAll(".orders-internal__item");
-  //   const countItem = document.querySelector(".orders__amount orders-internal__amounts span")
-  //   console.log(arrItem.length);
-  // }
-  // calcOrderItems()
+    // Подсчет позиций в заказе
+    const calcOrderItems = () => {
+      const itemWrap = document.querySelector(".orders-internal__item-wrap");
+      const arrItem = itemWrap.querySelectorAll(".orders-internal__item");
+      const countItem = document.querySelector(".orders-internal__amounts span");
+      countItem.innerHTML = arrItem.length;
+    };
+    calcOrderItems();
+  }
+  
 });

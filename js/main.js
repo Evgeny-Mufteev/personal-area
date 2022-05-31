@@ -1,9 +1,10 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
+
   // меню бургер
   const dropdownMenu = (el) => {
-    el = el.target;
 
+    el = el.target;
     const MobileMenuIcon = document.querySelector(".header__mobile-menu");
     const blockMenu = document.querySelector(".mobile-menu");
 
@@ -16,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", dropdownMenu);
 
   // Якорь наверх
-  const toper = function () {
-    let button = document.querySelector(".toTop");
+  const anchorUp = () => {
+    let buttonAnchor = document.querySelector(".toTop");
     let header = document.querySelector(".header");
 
     const scrollTo = (element) => {
@@ -27,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth",
       });
     };
-    button.addEventListener("click", () => {
+    buttonAnchor.addEventListener("click", () => {
       scrollTo(header);
     });
   };
-  toper();
+  anchorUp();
 
   // отображение якоря при скролле
   window.addEventListener("scroll", () => {
@@ -43,4 +44,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const delegate = (el) => {
+    el = el.target;
+    // Сортировка заказов
+    if (document.querySelector(".orders__sorting-btn")) {
+      
+      if (el.closest(".orders__sorting-btn, .shop-page__sorting-btn")) {
+        el.closest(".orders__sorting-btn, .shop-page__sorting-btn").classList.toggle("active");
+      }
+      if (el.closest(".order__sorting-list")) {
+        let allEl = el.closest(".order__sorting-list").querySelectorAll(".orders__sorting-item");
+        allEl.forEach((e) => {
+          e.classList.remove("active");
+        });
+      }
+      if (el.classList.contains("orders__sorting-item")) {
+        el.classList.add("active");
+        document.querySelector(".orders__text-btn").innerText = el.innerText;
+      }
+      if (!el.closest(".orders__sorting-btn, .shop-page__sorting-btn")) {
+        document.querySelector(".orders__sorting-btn").classList.remove("active");
+      }
+    }
+
+    // Сортировка магазинов
+    if (document.querySelector(".shop-page__sorting-btn")) {
+
+      if (el.closest(".shop-page__sorting-list")) {
+        let allEl = el.closest(".shop-page__sorting-list").querySelectorAll(".shop-page__sorting-item");
+        allEl.forEach((e) => {
+          e.classList.remove("active");
+        });
+      }
+      if (el.classList.contains("shop-page__sorting-item")) {
+        el.classList.add("active");
+        document.querySelector(".shop-page__text-btn").innerText = el.innerText;
+      }
+    }
+  };
+  document.addEventListener("click", delegate);
+  
 });

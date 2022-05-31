@@ -244,11 +244,11 @@
     height: 73px;
 }
 
-  .infoblock__text::-webkit-scrollbar-track {
+.infoblock__text::-webkit-scrollbar-track {
     background: transparent;
 }
 
-  .infoblock__text::-webkit-scrollbar-thumb {
+.infoblock__text::-webkit-scrollbar-thumb {
     background: #B0B7D7;
     border-radius: 4px;
     width: 6px;
@@ -270,6 +270,7 @@
     height: 158px;
 }
 
+.infoblock__mini-pgoto-inner input,
 .infoblock__mini-pgoto-inner img {
     width: 100%;
     height: 100%;
@@ -327,6 +328,26 @@
 .infoblock__edit {
     cursor: pointer;
 }
+
+.infoblock__input.work-time-from {
+    width: 60px;
+  }
+  
+  .infoblock__input.work-time-from::after{
+    content: '-';
+    position: relative;
+    left: -5px;
+  }
+  
+  .infoblock__input.work-time-to {
+    width: 60px;
+  }
+  
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    /* display: none; */
+    opacity: 0;
+    position: absolute;
+  }
 
 /* адаптив */
 @media screen and (min-width: 1025px) and (max-width: 1349px) {

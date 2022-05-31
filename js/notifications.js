@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       multipleDatesSeparator: " - ",
     });
 
-  // Делегирование
+  // Удаление и прочтение уведомлений
   const removeNotice = (el) => {
     el = el.target;
     const allNoticeItem = document.querySelectorAll(".notices__item");
@@ -34,5 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   document.addEventListener("click", removeNotice);
 
-  
 });

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Магазин отзывы</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/lk_global.css">
+    <link rel="stylesheet" href="css/reviews.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="header__mobile-right">
+                        <div class="header__mobile-wrap">
+                            <div class="header__mobile-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="header-top__logo">
+                            <a href="index.html" class="header-top__logo-link">
+                                <img src="img/logo.svg" alt="logotype">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-top__info">
+                        <div class="header-top__menu">
+                            <ul class="header-top__list">
+                                <li class="header-top__item">Инструкции</li>
+                                <li class="header-top__item">Связаться с администратором</li>
+                                <li class="header-top__item">
+                                    <svg class="svg-icon icon-exit">
+                                        <use xlink:href="css/sprite.svg#exit"></use>
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-bottom__menu">
+                        <ul class="header-bottom__list">
+                            <li class="header-bottom__item"><a href="index.html" class="header-bottom__link ">Заказы</a></li>
+                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
+                            <li class="header-bottom__item">
+                                <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
+                            </li>
+                            <li class="header-bottom__item">
+                                <a href="reviews.html" class="header-bottom__link active">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                            </li>
+                            <li class="header-bottom__item"><a href="storeinfo.html" class="header-bottom__link">Информация о магазине</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--mobile-menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__content">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item ">
+                            <a class="mobile-menu__link" href="index.html">Заказы</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Товары и акции</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg> 
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="notifications.html">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item active">
+                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="storeinfo.html">Информация о магазине</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-menu__info">
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Инструкции</a>
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Связаться с администратором</a>
+                </div>
+            </div>
+            <!--mobile-menu -->
+        </header>
+        <main>
+            <section class="reviews">
+                <div class="container">
+                    <h1 class="mobile-title">Отзывы <span>(15)</span></h1>
+                    <div class="orders__options">
+                        <div class="orders__sorting-btn">
+                            <span class="orders__text-btn">Сначала новые</span>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                            <ul class="orders__sorting-list">
+                                <li class="orders__sorting-item">Сначала новые</li>
+                                <li class="orders__sorting-item">Рейтинг по возрастанию</li>
+                                <li class="orders__sorting-item">Рейтинг по убыванию</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="reviews__items-wrap">
+
+                        <div class="reviews__item">
+                            <div class="reviews__content">
+                                <div class="reviews__box">
+                                    <div class="reviews__options">
+                                        <div class="reviews__img">
+                                            <a href="javascript:void(0)" class="reviews__link">
+                                                <img src="img/reviews_img.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__product">Название товара, Название бренда Название бренда</div>
+                                            <div class="reviews__color">Цвет: <span>белый</span></div>
+                                            <div class="reviews__size">Размер: <span>xs</span></div>
+                                            <div class="reviews__price">Цена на момент покупки: <span>1 600₽</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reviews__box _right">
+                                    <a href="javascript:void(0)" class="reviews__complaint">Пожаловаться</a>
+                                    <a href="javascript:void(0)" class="reviews__to-product">Перейти к отзыву</a>
+                                </div>
+                            </div>
+                            <div class="reviews__block">
+                                <div class="reviews__inner">
+                                    <div class="reviews__row">
+                                        <div class="reviews__holder">
+                                            <div class="reviews__user-wrap">
+                                                <div class="reviews__mini-img">
+                                                    <img src="img/reviews_img.jpg" alt="">
+                                                </div>
+                                                <div class="reviews__user">
+                                                    <div class="reviews__rating">
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews__name">Геноци Дармян</div>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__data"><span>20 мая 2021 </span><span> 18:40</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__comment">
+                                        <span>
+                                            Не следует, однако, забывать, что новая модель организационной деятельности способствует подготовке 
+                                            и реализации кластеризации усилий. Предварительные выводы неутешительны: укрепление и развитие внутренней 
+                                            структуры создаёт необходимость включения.
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="reviews__btn-answer js-open-form" type="button">Ответить на отзыв</button>
+                            </div>
+                            <div class="reviews__answer-wrap js-answer">
+                                <div class="reviews__answer-inner">
+                                    <form class="reviews__form-answer" action="#0" name="REVIEW_ANSWER">
+                                       <div class="reviews__answer-title">
+                                           <p class="reviews__response-header">Ваш ответ</p>
+                                           <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
+                                       </div>
+                                        <div class="reviews__textarea-wrap">
+                                            <textarea class="reviews__textarea js-lengthTextarea" placeholder="Текст комментария" maxlength="1000"></textarea>
+                                        </div>
+                                        <div class="review__answer-action">
+                                            <button type="submit" class="reviews__send">Отправить</button>
+                                            <button type="reset" class="review__cancel js-reboot">Отменить</button>
+                                        </div>
+                                   </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews__item">
+                            <div class="reviews__content">
+                                <div class="reviews__box">
+                                    <div class="reviews__options">
+                                        <div class="reviews__img">
+                                            <a href="javascript:void(0)" class="reviews__link">
+                                                <img src="img/reviews_img.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__product">Название товара, Название бренда Название бренда</div>
+                                            <div class="reviews__color">Цвет: <span>белый</span></div>
+                                            <div class="reviews__size">Размер: <span>xs</span></div>
+                                            <div class="reviews__price">Цена на момент покупки: <span>1 600₽</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reviews__box _right">
+                                    <a href="javascript:void(0)" class="reviews__complaint">Пожаловаться</a>
+                                    <a href="javascript:void(0)" class="reviews__to-product">Перейти к отзыву</a>
+                                </div>
+                            </div>
+                            <div class="reviews__block">
+                                <div class="reviews__inner">
+                                    <div class="reviews__row">
+                                        <div class="reviews__holder">
+                                            <div class="reviews__user-wrap">
+                                                <div class="reviews__mini-img">
+                                                    <img src="img/reviews_img.jpg" alt="">
+                                                </div>
+                                                <div class="reviews__user">
+                                                    <div class="reviews__rating">
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star active">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="star">
+                                                            <svg class="icon-star">
+                                                                <use xlink:href="css/sprite.svg#icon-star"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews__name">Яна Сильник</div>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__data"><span>20 мая 2021 </span><span> 18:40</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews__comment">
+                                        <span>
+                                            Не следует, однако, забывать, что новая модель организационной деятельности способствует подготовке 
+                                            и реализации кластеризации усилий. Предварительные выводы неутешительны: укрепление и развитие внутренней 
+                                            структуры создаёт необходимость включения.
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="reviews__btn-answer js-open-form" type="button">Ответить на отзыв</button>
+                            </div>
+                            <div class="reviews__answer-wrap js-answer">
+                                <div class="reviews__answer-inner">
+                                    <form class="reviews__form-answer" action="#0" name="REVIEW_ANSWER">
+                                       <div class="reviews__answer-title">
+                                           <p class="reviews__response-header">Ваш ответ</p>
+                                           <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
+                                       </div>
+                                        <div class="reviews__textarea-wrap">
+                                            <textarea class="reviews__textarea js-lengthTextarea" placeholder="Текст комментария" maxlength="1000"></textarea>
+                                        </div>
+                                        <div class="review__answer-action">
+                                            <button type="submit" class="reviews__send">Отправить</button>
+                                            <button type="reset" class="review__cancel js-reboot">Отменить</button>
+                                        </div>
+                                   </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__container">
+                    <div class="footer__info footer__block">
+                        <p class="footer__text">2004-2021 ©Индиго LIFE — интернет-магазин одежды, обуви и аксессуаров.</p>
+                        <p class="footer__text">Все права защищены</p>
+                    </div>
+                    <div class="footer__adress footer__block">
+                        <a href="mailto:info@shop.ru" class="footer__mail">info@shop.ru</a>
+                        <p class="footer__text">603003, Нижегородская область, г.Нижний Новгород, Казанское Шоссе, дом 11</p>
+                    </div>
+                    <div class="footer__connect footer__block">
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                    </div>
+                    <div class="footer__social footer__block">
+                        <div class="footer__social-inner">
+                            <div class="footer__link-wrap">
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-fb social">
+                                        <use xlink:href="css/sprite.svg#scial-fb"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-inst social">
+                                        <use xlink:href="css/sprite.svg#scial-inst"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-vk social">
+                                        <use xlink:href="css/sprite.svg#scial-vk"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-ytb social">
+                                        <use xlink:href="css/sprite.svg#scial-ytb"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="footer__text footer__copyright">
+                                Разработано в R-top
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Далее модальные окна если будут -->
+        <div class="overlay"></div>
+        <div class="toTop">
+            <svg class="anhor">
+                <use xlink:href="css/sprite.svg#anhor"></use>
+            </svg>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>
