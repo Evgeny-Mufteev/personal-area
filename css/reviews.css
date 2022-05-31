@@ -163,6 +163,24 @@
 
 .reviews__comment {
     margin-top: 24px;
+    max-height: 72px;
+    overflow: auto;
+}
+
+.reviews__comment::-webkit-scrollbar {
+    width: 6px;
+    height: 50px;
+}
+
+.reviews__comment::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reviews__comment::-webkit-scrollbar-thumb {
+    background: #D4D8E8;
+    border-radius: 4px;
+    width: 6px;
+    height: 50px;
 }
 
 .reviews__block {
@@ -289,8 +307,61 @@
     display: none;
 }
 
+.reviews__response-header {
+    color: #606FAE;
+}
+
+/* response to review */
+.reviews__reply-box {
+    padding: 16px;
+    border: 1px solid var(--not-main-color-blue);
+    border-radius: 8px;
+    background: var(--white-color);
+}
+
+.reviews__answer-part {
+    border-bottom: 2px dashed #DFE2ED;
+    border-left: 2px dashed #DFE2ED;
+    min-width: 83px;
+    min-height: 70px;
+    max-width: 83px;
+    max-height: 70px;
+}
+
+.reviews__answer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 102px;
+    margin-top: 13px;
+    color: #202020;
+}
+
+.reviews__reply-box span {
+    max-height: 72px;
+    overflow: auto;
+    display: block;
+}
+
+.reviews__reply-box span::-webkit-scrollbar {
+    width: 6px;
+    height: 50px;
+}
+
+.reviews__reply-box span::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reviews__reply-box span::-webkit-scrollbar-thumb {
+    background: #D4D8E8;
+    border-radius: 4px;
+    width: 6px;
+    height: 50px;
+}
+/* END response to review */
 
 
+/* Адаптив */
 @media screen and (max-width: 1024px) {
 
     .reviews__box {
@@ -318,6 +389,16 @@
     .reviews__answer-inner {
         padding-left: 0px;
     }
+
+    .reviews__answer-part {
+        display: none;
+    }
+
+    .reviews__answer-content {
+        padding-left: 0;
+    }
+
+
 
 }
 
@@ -349,8 +430,6 @@
         margin-bottom: 24px;
     }
 }
-
-
 
 @media screen and (max-width: 480px) {
 
@@ -401,7 +480,8 @@
     }
 
     .reviews__name,
-    .reviews__comment span {
+    .reviews__comment span,
+    .reviews__reply-box span {
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
