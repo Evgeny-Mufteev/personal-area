@@ -759,16 +759,24 @@ li.btn.next:hover {
 
 /* Сортировка */
 .orders__sorting-btn svg {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .orders__sorting-btn {
   position: relative;
   width: 191px;
   height: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: var(--white-color);
   border: 1px solid var(--main-color-blue);
   border-radius: 4px;
@@ -778,7 +786,10 @@ li.btn.next:hover {
   color: var(--main-color-blue);
   padding: 0 9px;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-right: 24px;
 }
 
@@ -813,7 +824,9 @@ li.btn.next:hover {
 }
 
 .orders__sorting-btn.active .chevron-right {
-  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
 }
 /* END Сортировка */
 
@@ -892,7 +905,9 @@ li.btn.next:hover {
 
   .mobile-menu.active {
     display: block;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px);
     opacity: 1;
     visibility: visible;
     height: 100vh;
@@ -907,9 +922,14 @@ li.btn.next:hover {
     height: 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-1000px);
+    -webkit-transform: translateY(-1000px);
+        -ms-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
     transition: all 1s ease;
-  box-shadow: inset  0px 0px 20px rgba(146, 149, 160, 0.15);
+  -webkit-box-shadow: inset  0px 0px 20px rgba(146, 149, 160, 0.15);
+          box-shadow: inset  0px 0px 20px rgba(146, 149, 160, 0.15);
 }
 
   .mobile-menu__link {

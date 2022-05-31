@@ -38,23 +38,39 @@
 }
 
 .orders__warning-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #FFF4D7;
     padding: 12px 23px 14px;
     border-radius: 8px 8px 0px 0px;
 }
 
 .orders__warning {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .orders__options {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 64px 0 32px;
 }
 
@@ -76,7 +92,10 @@
 .btn {
     background: transparent;
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .orders__heading {
@@ -111,16 +130,28 @@
 }
 
 .orders__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
     padding: 32px 24px;
 }
 
 .orders__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 32px;
 }
 
@@ -135,7 +166,10 @@
 .orders__variations {
     padding: 4px 18px;
     border-radius: 40px;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .orders__data {
@@ -167,16 +201,28 @@
     border-radius: 4px;
     color: var(--not-main-color-blue);
     display: block;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .orders__holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 }
 
 .sale_counter_time_actDeath {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -196,17 +242,28 @@
 }
 
 .orders__popup-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     width: 638px;
     height: 253px;
     background: var(--white-color);
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     z-index: 16;
 }
 
@@ -221,8 +278,12 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 33px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     text-align: center;
     color: var(--main-color-blue);
     margin-bottom: 6px;
@@ -271,9 +332,15 @@
 
 .orders-internal__notice-wrap {
     background: #FFF4D7;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 12px 23px 14px;
     color: var(--main-color-black);
     margin-top: 20px;
@@ -295,9 +362,15 @@
 }
 
 .orders-internal__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
 }
 
 .orders-internal__title {
@@ -311,8 +384,12 @@
 }
 
 .orders-internal__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     padding: 13px 25px 13px 21px;
     background: var(--main-color-blue);
@@ -320,14 +397,23 @@
     font-size: 14px;
     line-height: 16px;
     border-radius: 7px 7px 0px 0px;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     font-weight: 400;
 }
 
 .orders-internal__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     padding: 20px 25px 20px 21px;
     background: var(--white-color);
@@ -339,15 +425,25 @@
 }
 
 .orders-internal__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
     padding: 40px 25px 24px 21px;
 }
 
 .orders-internal__choose {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .orders-internal__added-wrap {
@@ -366,50 +462,78 @@
 .orders-internal__article {
     min-width: 81px;
     max-width: 81px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__color {
     min-width: 145px;
     max-width: 145px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__size {
     min-width: 50px;
     max-width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__amount {
     min-width: 77px;
     max-width: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__price {
     min-width: 70px;
     max-width: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__added-wrap {
     min-width: 64px;
     max-width: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__not-added-wrap {
     min-width: 77px;
     max-width: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .orders-internal__prices {
@@ -437,9 +561,16 @@
 }
 
 .orders-internal__holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 .orders-internal__btn._green {
@@ -457,7 +588,8 @@
     background: #fff;
     padding: 11px 24px 12px;
     cursor: pointer;
-    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
     margin-right: 24px;
 }
 
@@ -499,13 +631,19 @@
     color: var(--main-color-black);
     font-size: 22px;
     line-height: 22px;
-    transform: scale(0);
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     width: 100%;
     height: 100%;
 }
 .orders-internal__radio:checked + label:before{    
-    transform: scale(1);
+    -webkit-transform: scale(1);    
+        -ms-transform: scale(1);    
+            transform: scale(1);
 }
 /* END Стилизация радио кнопок */
 .orders-internal__body-wrap {
@@ -551,7 +689,8 @@
 .not-in-stock .orders-internal__amount,
 .not-in-stock .orders-internal__price {
     color: #BDBDBD;
-    text-decoration-line: line-through;
+    -webkit-text-decoration-line: line-through;
+            text-decoration-line: line-through;
 }
 /*END orders-internal */
 .orders-internal__item div span {
@@ -581,12 +720,15 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
-    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
     color: #384B9A;
 }
 
 .orders__holder.shop-page {
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     height: 149px;
 }
 
@@ -594,9 +736,15 @@
     position: relative;
     width: 366px;
     height: 30px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: var(--white-color);
     border: 1px solid var(--main-color-blue);
     border-radius: 4px;
@@ -606,7 +754,10 @@
     color: var(--main-color-blue);
     padding: 0 9px;
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     margin-right: 24px;
 }
 
@@ -637,11 +788,15 @@
 }
 
 .shop-page__sorting-btn svg {
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
 }
 
 .shop-page__sorting-btn.active .chevron-right {
-    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
 }
 /*END  Страница ЛК админ */
 
@@ -683,8 +838,13 @@
 
     /* Страница ЛК админ */
     .orders__warning-wrap.shop-page {
-        flex-direction: column;
-        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
     }
 
     .orders__warning-wrap.shop-page .orders__warning {
@@ -697,8 +857,13 @@
 @media screen and (max-width: 1024px) {
 
     .orders__warning-wrap {
-        flex-direction: column;
-        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
     }
 
     .orders__warning {
@@ -719,14 +884,26 @@
     }
 
     .orders-internal__warning-wrap .orders__btn-wrap {
-        flex-direction: row;
-        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .orders-internal__box .orders__btn-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
     }
 
     .orders-internal__btn._gray {
@@ -750,7 +927,10 @@
     }
 
     .orders__content {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .orders__box {
@@ -758,7 +938,9 @@
     }
 
     .orders__row {
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         width: 100%;
     }
 
@@ -831,7 +1013,10 @@
     }
 
     .orders-internal__content {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .orders-internal__box {
@@ -850,7 +1035,10 @@
     }
 
     .orders__options.shop-page {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .orders__options.shop-page .orders__sorting-btn,
@@ -901,8 +1089,13 @@
     }
 
     .orders__popup-btn-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 100%;
 
         font-weight: 400;
@@ -918,7 +1111,10 @@
     /*END Модальные окна */
 
     .orders__options {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .orders__sorting-btn {
@@ -938,7 +1134,8 @@
     }
 
     .orders__sorting-list {
-        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
     }
 
     .notices__date-picker {
@@ -997,7 +1194,9 @@
     }
 
     .orders__holder {
-        align-items: flex-start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         margin-top: 24px;
     }
 
