@@ -3,12 +3,14 @@
     src: url('fonts/Roboto-Regular.ttf');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-Italic.ttf');
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -16,12 +18,14 @@
     src: url('fonts/Roboto-Medium.ttf');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-MediumItalic.ttf');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -29,10 +33,12 @@
     src: url('fonts/Roboto-Bold.ttf');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-BoldItalic.ttf');
     font-weight: 700;
     font-style: italic;
+    font-display: swap;
 }
