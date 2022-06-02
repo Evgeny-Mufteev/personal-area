@@ -235,6 +235,10 @@
     .notices__options {
         padding: 20px 0 40px;
     }
+
+    .notices__item {
+        margin-bottom: 12px;
+    }
 }
 
 @media screen and (max-width: 480px) {

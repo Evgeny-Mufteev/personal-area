@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -100,6 +100,7 @@
             <!--mobile-menu -->
         </header>
         <main>
+            <!-- Максимум отзывов на странице - 10шт -->
             <section class="reviews">
                 <div class="container">
                     <h1 class="mobile-title">Отзывы <span>(15)</span></h1>
@@ -199,10 +200,10 @@
                             <div class="reviews__answer-wrap js-answer">
                                 <div class="reviews__answer-inner">
                                     <form class="reviews__form-answer" action="#0" name="REVIEW_ANSWER">
-                                       <div class="reviews__answer-title">
-                                           <p class="reviews__response-header">Ваш ответ</p>
-                                           <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
-                                       </div>
+                                    <div class="reviews__answer-title">
+                                        <p class="reviews__response-header">Ваш ответ</p>
+                                        <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
+                                    </div>
                                         <div class="reviews__textarea-wrap">
                                             <textarea class="reviews__textarea js-lengthTextarea" placeholder="Текст комментария" maxlength="1000"></textarea>
                                         </div>
@@ -210,7 +211,7 @@
                                             <button type="submit" class="reviews__send">Отправить</button>
                                             <button type="reset" class="review__cancel js-reboot">Отменить</button>
                                         </div>
-                                   </form>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -292,10 +293,10 @@
                             <div class="reviews__answer-wrap js-answer">
                                 <div class="reviews__answer-inner">
                                     <form class="reviews__form-answer" action="#0" name="REVIEW_ANSWER">
-                                       <div class="reviews__answer-title">
-                                           <p class="reviews__response-header">Ваш ответ</p>
-                                           <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
-                                       </div>
+                                    <div class="reviews__answer-title">
+                                        <p class="reviews__response-header">Ваш ответ</p>
+                                        <p class="reviews__characters">Введено символов <span class="js-character-count">0</span> / 1000</p>
+                                    </div>
                                         <div class="reviews__textarea-wrap">
                                             <textarea class="reviews__textarea js-lengthTextarea" placeholder="Текст комментария" maxlength="1000"></textarea>
                                         </div>
@@ -303,7 +304,7 @@
                                             <button type="submit" class="reviews__send">Отправить</button>
                                             <button type="reset" class="review__cancel js-reboot">Отменить</button>
                                         </div>
-                                   </form>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -405,9 +406,46 @@
                             </div>
                         </div>
                     </div>
+                    <div class="pagination" data-pagination-num="1">
+                        <a class="btn-pagination" href="javascript:void(0)">Показать еще +</a>
+                        <div class="pagination__list">
+                            <ul>
+                                <li class="btn prev">
+                                    <a href="javascript:void(0)">
+                                        <svg class="svg-icon arrow-left">
+                                            <use xlink:href="css/sprite.svg#arrow-left"></use>
+                                        </svg>
+                                        <span>Назад</span>
+                                    </a>
+                                </li>
+                                <li class="numb"><a href="javascript:void(0)"><span>1</span></a></li>
+                                <li class="numb active"><span>2</span></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>3</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>4</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>5</span></a></li>
+                                <li class="numb"><a href="javascript:void(0)"><span>...</span></a></li>
+                                <li class="btn next">
+                                    <a href="javascript:void(0)">
+                                        <span>Вперед</span>
+                                        <svg class="svg-icon arrow-right">
+                                            <use xlink:href="css/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                          <div style="clear: both"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -457,12 +495,6 @@
         </footer>
         <!-- Далее модальные окна если будут -->
         <div class="overlay"></div>
-        <div class="toTop">
-            <svg class="anhor">
-                <use xlink:href="css/sprite.svg#anhor"></use>
-            </svg>
-        </div>
-
     </div>
     <script src="js/main.js"></script>
     <script src="js/reviews.js"></script>

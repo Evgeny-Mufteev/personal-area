@@ -279,21 +279,37 @@
 }
 
 .reviews__send {
-    background: #384B9A;
+    background: var(--main-color-blue);
     border-radius: 4px;
-    color: #fff;
-    padding: 12px 52px;
+    color: var(--white-color);
+    padding: 9px 53px;
+    width: 186px;
     cursor: pointer;
     margin-right: 24px;
+    transition: all 0.3s ease;
 }
 
 .review__cancel {
-    background: #fff;
+    background: var(--white-color);
     border-radius: 4px;
-    color: #384B9A;
-    padding: 12px 52px;
+    color: var(--main-color-blue);
+    padding: 9px 53px;
+    width: 186px;
     border: 1px solid #606FAE;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reviews__send:hover,
+.review__cancel:hover {
+    background: #102992;
+    color: var(--white-color);
+}
+
+.reviews__send:active,
+.review__cancel:active {
+    background: #303F7B;
+    color: #C1C5D7;
 }
 
 .review__answer-action {
@@ -308,7 +324,17 @@
 }
 
 .reviews__response-header {
-    color: #606FAE;
+    font-weight: 500;
+    color: var(--not-main-color-blue);
+}
+
+.reviews__name,
+.reviews__comment span {
+    color: var( --main-color-black);
+}
+
+.reviews__characters {
+    font-size: 14px;
 }
 
 /* response to review */
@@ -326,6 +352,7 @@
     min-height: 70px;
     max-width: 83px;
     max-height: 70px;
+    margin-right: 16px;
 }
 
 .reviews__answer-content {
@@ -433,6 +460,26 @@
 
 @media screen and (max-width: 480px) {
 
+    .reviews__reply-box span {
+        max-height: 170px;
+        line-height: 20px;
+    }
+
+    .reviews__comment {
+        max-height: 170px;
+        line-height: 20px;
+    }
+
+    .reviews__color,
+    .reviews__size {
+        margin-bottom: 4px;
+    }
+
+    .reviews__send,
+    .review__cancel {
+        width: 100%;
+    }
+
     .orders__sorting-btn, 
     .orders__sorting-list {
         width: 100%;
@@ -531,7 +578,7 @@
 
     .reviews__textarea {
         padding: 6px;
-        height: 308px;
+        max-height: 308px;
         font-size: 14px;
         line-height: 20px;
     }
@@ -548,5 +595,14 @@
         margin-bottom: 8px;
     }
 
+    .reviews__answer-content {
+        margin-top: 32px;
+    }
+
+    .reviews__inner,
+    .reviews__reply-box,
+    .reviews__textarea-wrap {
+        border-radius: 4px;
+    }
 
 }

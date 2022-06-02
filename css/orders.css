@@ -74,6 +74,14 @@
     padding: 64px 0 32px;
 }
 
+.orders__item.new {
+    padding-top: 16px;
+}
+
+.orders__item.new .orders__warning-wrap {
+    border-radius: 0
+}
+
 .orders__item {
     background: var(--white-color);
     border: 1px solid #ECEDF1;
@@ -90,6 +98,7 @@
 }
 
 .btn {
+    transition: all 0.3s ease;
     background: transparent;
     cursor: pointer;
     -webkit-user-select: none;
@@ -111,6 +120,12 @@
     font-size: 18px;
     line-height: 21px;
     color: var(--main-color-black);
+}
+
+
+.sale_counter_time_h,
+.sale_counter_time_m {
+    font-weight: 600;
 }
 
 .btn__cancel {
@@ -163,6 +178,13 @@
     margin-right: 24px;
 }
 
+.orders__name span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--main-color-blue);
+}
+
 .orders__variations {
     padding: 4px 18px;
     border-radius: 40px;
@@ -196,6 +218,7 @@
 }
 
 .orders__view-order {
+    transition: all 0.3s ease;
     padding: 11px 33px;
     border: 1px solid var(--not-main-color-blue);
     border-radius: 4px;
@@ -205,6 +228,16 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+}
+
+.orders__view-order:hover {
+    background: #102992;
+    color: var(--white-color);
+}
+
+.orders__view-order:active {
+    background: #303F7B;
+    color: #C1C5D7;
 }
 
 .orders__holder {
@@ -299,8 +332,9 @@
 }
 
 .btn-popup {
-    padding: 16px 40px;
+    padding: 16px 0px;
     border-radius: 4px;
+    width: 234px;
 }
 
 .popup-btn__cancel {
@@ -308,15 +342,47 @@
     margin-right: 26px;
 }
 
+.popup-btn__cancel:hover {
+    background: #102992;
+    color: var(--white-color);
+}
+
+.popup-btn__cancel:active {
+    background: #303F7B;
+    color: #C1C5D7;
+}
+
 .popup-btn__confirm {
+    border: 1px solid var(--green-btn);
     background: var(--green-btn);
     color: var(--white-color);
 }
 
+.popup-btn__confirm:hover {
+    background: #4CB500;
+    color: var(--white-color);
+}
+
+.popup-btn__confirm:active {
+    background: #509A1A;
+    color: #CAE1BA;
+}
+
 .popup-btn__cancellations {
+    border: 1px solid var(--red-color);
     background: var(--red-color);
     color: var(--white-color);
 }
+
+.popup-btn__cancellations:hover {
+    background: #A40512;
+}
+
+.popup-btn__cancellations:active {
+    background: #9B3038;
+    color: var(--white-color);
+}
+
 /* popup */
 
 .js-little-time {
@@ -324,6 +390,11 @@
 }
 
 /* orders-internal */
+
+.orders-internal__prices,
+.orders-internal__prices span {
+    font-weight: 500;
+}
 
 .orders-internal__warning-wrap,
 .orders-internal__notice-wrap {
@@ -576,16 +647,29 @@
 .orders-internal__btn._green {
     border: 1px solid #6BA342;
     border-radius: 4px;
-    background: #fff;
+    background: var(--white-color);
     color: #6BA342;
     padding: 11px 24px 12px;
     width: 250px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.orders-internal__btn._green:hover,
+.btn__confirm:hover {
+    background: #4CB500;
+    color: var(--white-color);
+}
+
+.orders-internal__btn._green:active,
+.btn__confirm:active {
+    background: #509A1A;
+    color: #CAE1BA;
 }
 
 .orders-internal__btn._gray {
     color: #BDBDBD;
-    background: #fff;
+    background: var(--white-color);
     padding: 11px 24px 12px;
     cursor: pointer;
     -webkit-text-decoration-line: underline;
@@ -914,6 +998,11 @@
     .orders-internal__body-wrap {
         margin-bottom: 120px;
     }
+
+    .orders__item {
+        margin-bottom: 24px;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -1068,7 +1157,15 @@
 
 @media screen and (max-width: 481px) {
 
+    .orders__item {
+        margin-bottom: 12px;
+    }
+
     /* Модальные окна */
+    .btn-popup {
+        width: 100%;
+    }
+
     .orders__popup-inner {
         width: 100%;
         height: auto;
@@ -1177,6 +1274,7 @@
 
     .orders__variations {
         padding: 4px 10px;
+        white-space: nowrap;
     }
 
     .orders__variations {
@@ -1210,10 +1308,11 @@
         font-size: 14px;
         line-height: 16px;
         text-align: center;
+        padding: 9px 33px;
     }
 
     .orders__content {
-        padding: 16px 10px 16px;
+        padding: 22px 10px 16px;
     }
 
     .orders__timer {
@@ -1239,16 +1338,19 @@
         line-height: 24px;
     }
 
-    .orders__btn-wrap {
+    .orders-internal .orders__btn-wrap {
         margin-top: 20px;
     }
 
     .orders-internal__btn._gray {
         padding: 0 0 11px;
+        font-size: 14px;
     }
 
     .orders-internal__btn._green {
         width: 100%;
+        padding: 5px 24px 5px;
+        font-size: 14px;
     }
 
     .orders-internal__header,
@@ -1263,5 +1365,35 @@
 
     .orders-internal__warning-wrap .orders__btn-wrap {
         margin-top: 8px;
+    }
+
+    .btn__cancel {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .btn__confirm {
+        padding: 6px 12px;
+    }
+
+    .orders__name, .orders__name span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .orders__row {
+        margin-bottom: 24px;
+    }
+
+    .orders__price {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .orders__name, .orders__name span {
+        margin-right: 0;
     }
 }

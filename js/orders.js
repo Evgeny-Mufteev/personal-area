@@ -1,6 +1,5 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
-
   // Инпут выбора даты
   if (document.getElementById("date-picker-orders")) {
     new AirDatepicker("#date-picker-orders", {
@@ -16,16 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
       body = document.body,
       check = false;
 
-        arrPopup.forEach((popup) => {
-          if (popup.classList.contains("active")) {
-            popup.classList.remove("active");
-            check = true;
-          }
-          if (check) {
-            overlay.classList.remove("active");
-            body.classList.remove("no-scroll");
-          }
-        });
+    arrPopup.forEach((popup) => {
+      if (popup.classList.contains("active")) {
+        popup.classList.remove("active");
+        check = true;
+      }
+      if (check) {
+        overlay.classList.remove("active");
+        body.classList.remove("no-scroll");
+      }
+    });
   };
 
   // Таймер JS
@@ -87,10 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Модальные окна принять/отменить заказ
   const delegatModalWindows = (el, accept = false, acceptPopup = false, closeModal = false) => {
-
     let overlay = document.querySelector(".overlay"),
-        succesPopup = document.querySelector(".orders__succes-popup"),
-        сancelPopup = document.querySelector(".orders__сancellations-popup");
+      succesPopup = document.querySelector(".orders__succes-popup"),
+      сancelPopup = document.querySelector(".orders__сancellations-popup");
 
     if (accept) {
       el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
@@ -113,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("delete");
       }
     }
-
   };
 
   document.addEventListener("click", (el) => {
@@ -189,15 +186,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     document.forms.processing.addEventListener("click", delegateOrdersInternal);
+  }
 
-    // Подсчет позиций в заказе
-    const calcOrderItems = () => {
+  // Подсчет позиций в заказе
+  const calcOrderItems = () => {
+    if (document.querySelector(".orders-internal__item-wrap")) {
       const itemWrap = document.querySelector(".orders-internal__item-wrap");
       const arrItem = itemWrap.querySelectorAll(".orders-internal__item");
       const countItem = document.querySelector(".orders-internal__amounts span");
       countItem.innerHTML = arrItem.length;
-    };
-    calcOrderItems();
-  }
-  
+    }
+  };
+  calcOrderItems();
+
+  // Подстчет готовых к выдаче заказов
+  document.querySelectorAll("._added").forEach((input) => {
+    input.addEventListener("click", () => {
+      document.querySelector(".orders-internal__good-product > span").innerHTML =
+        document.querySelectorAll("input._added:checked").length;
+    });
+  });
 });

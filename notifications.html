@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -302,6 +302,13 @@
                 </div>
             </section>
         </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -350,11 +357,7 @@
             </div>
         </footer>
         <!-- Далее модальные окна если будут -->
-        <div class="toTop">
-            <svg class="anhor">
-                <use xlink:href="css/sprite.svg#anhor"></use>
-            </svg>
-        </div>
+
     </div>
     <script src="js/plugins/air-datepicker.js"></script>
     <script src="js/main.js"></script>

@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -137,8 +137,10 @@
                                     <div class="infoblock__input-wrap">
                                         <div class="infoblock__row">
                                             <label class="infoblock__label">График работы:</label>
-                                            <input class="infoblock__input work-time-from" min="08:00" max="22:00" type="time" value="10:00" required />
-                                            <input class="infoblock__input work-time-to" min="08:00" max="22:00" type="time" value="22:00" required />
+                                            <div class="infoblock__work-time">
+                                                <input class="infoblock__input work-time-from" min="08:00" max="22:00" type="time" value="10:00" required />
+                                                <input class="infoblock__input work-time-to" min="08:00" max="22:00" type="time" value="22:00" required />
+                                            </div>
                                           </div>
                                         <div class="infoblock__edit">
                                             <svg class=" icon-edit">
@@ -355,6 +357,13 @@
                 </div>
             </section>
         </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -403,11 +412,7 @@
             </div>
         </footer>
         <!-- Далее модальные окна если будут -->
-        <div class="toTop">
-            <svg class="anhor">
-                <use xlink:href="css/sprite.svg#anhor"></use>
-            </svg>
-        </div>
+
     </div>
     <script src="js/main.js"></script>
     <script src="js/storeinfo.js"></script>

@@ -1,9 +1,7 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
-
   // меню бургер
   const dropdownMenu = (el) => {
-
     el = el.target;
     const MobileMenuIcon = document.querySelector(".header__mobile-menu");
     const blockMenu = document.querySelector(".mobile-menu");
@@ -18,17 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Якорь наверх
   const anchorUp = () => {
-    let buttonAnchor = document.querySelector(".toTop");
+    let buttonAnchor = document.querySelector(".anhor");
     let header = document.querySelector(".header");
+    let wrapper = document.querySelector(".wrapper");
 
     const scrollTo = (element) => {
-      window.scroll({
+      // console.log(buttonAnchor.offsetTop);
+      wrapper.scroll({
         left: 0,
         top: element.offsetTop,
         behavior: "smooth",
       });
     };
     buttonAnchor.addEventListener("click", () => {
+ 
       scrollTo(header);
     });
   };
@@ -36,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // отображение якоря при скролле
   window.addEventListener("scroll", () => {
-    const topArrow = document.querySelector(".toTop");
+    const topArrow = document.querySelector(".anhor");
+
     if (window.pageYOffset > 500) {
       topArrow.classList.add("_show");
     } else {
@@ -48,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     el = el.target;
     // Сортировка заказов
     if (document.querySelector(".orders__sorting-btn")) {
-      
       if (el.closest(".orders__sorting-btn, .shop-page__sorting-btn")) {
         el.closest(".orders__sorting-btn, .shop-page__sorting-btn").classList.toggle("active");
       }
@@ -69,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Сортировка магазинов
     if (document.querySelector(".shop-page__sorting-btn")) {
-
       if (el.closest(".shop-page__sorting-list")) {
         let allEl = el.closest(".shop-page__sorting-list").querySelectorAll(".shop-page__sorting-item");
         allEl.forEach((e) => {
@@ -83,5 +83,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   document.addEventListener("click", delegate);
-  
 });

@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -101,6 +101,7 @@
             <!--mobile-menu -->
         </header>
         <main>
+            <!-- Максимальное количество заказов на странице - 16шт на всех адаптивах -->
             <section class="orders">
                 <div class="container">
                     <h1 class="mobile-title">Заказы</h1>
@@ -132,8 +133,8 @@
                         </div>
                     </div>
                     <div class="orders__item-wrap">
-
-                        <div class="orders__item" id="1">
+                        <!-- Если заказ не подтвержден добавляем new-->
+                        <div class="orders__item new" id="1">
                             <div class="orders__warning-wrap">
                                 <div class="orders__warning">
                                     <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
@@ -170,7 +171,7 @@
                             </div>
                         </div>
 
-                        <div class="orders__item" id="2">
+                        <div class="orders__item new" id="2">
                             <div class="orders__warning-wrap">
                                 <div class="orders__warning">
                                     <span class="orders__heading">Необходимо подтвердить или отменить заказ до истечения срока обработки</span>
@@ -341,6 +342,13 @@
                 </div>
             </section>
         </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -390,12 +398,6 @@
         </footer>
         <!-- Далее модальные окна если будут -->
         <div class="overlay"></div>
-        <div class="toTop">
-            <svg class="anhor">
-                <use xlink:href="css/sprite.svg#anhor"></use>
-            </svg>
-        </div>
-
         <!-- pop-up Подтверждение -->
         <div class="orders__succes-popup js-modal-popup">
             <div class="orders__popup-inner">

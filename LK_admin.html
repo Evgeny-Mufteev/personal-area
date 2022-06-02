@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -335,6 +335,13 @@
                 </div>
             </section>
         </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -384,12 +391,6 @@
         </footer>
         <!-- Далее модальные окна если будут -->
         <div class="overlay"></div>
-        <div class="toTop">
-            <svg class="anhor">
-                <use xlink:href="css/sprite.svg#anhor"></use>
-            </svg>
-        </div>
-
         <!-- pop-up Подтверждение -->
         <div class="orders__succes-popup js-modal-popup">
             <div class="orders__popup-inner">

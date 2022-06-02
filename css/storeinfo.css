@@ -290,6 +290,7 @@
     border: none;
     resize: none;
     display: block;
+    color: var(--main-color-black);
 }
 
 .infoblock__text::-webkit-scrollbar {
@@ -468,6 +469,10 @@
                 flex-direction: column;
     }
 
+    .infoblock__box-wrap {
+        margin-bottom: 48px;
+    }
+
     .infoblock__box:last-child {
         margin-top: 48px;
     }
@@ -633,6 +638,21 @@
     .infoblock__input {
         margin-bottom: 8px;
     }
+
+    .btn__red,
+    .btn__white {
+        height: 43px;
+        padding: 0;
+    }
+
+    .infoblock__label-file {
+        font-size: 12px;
+    }
+
+    .infoblock__description .infoblock__subject {
+        margin-bottom: 0;
+    }
+
 }
 
 
