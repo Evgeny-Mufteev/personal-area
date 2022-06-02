@@ -199,11 +199,18 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   calcOrderItems();
 
-  // Подстчет готовых к выдаче заказов
-  document.querySelectorAll("._added").forEach((input) => {
-    input.addEventListener("click", () => {
-      document.querySelector(".orders-internal__good-product > span").innerHTML =
-        document.querySelectorAll("input._added:checked").length;
-    });
-  });
+  //Подстчет готовых к выдаче заказов
+  const calcFinishedOrderCount = () => {
+    const arrCheckbox = document.querySelectorAll(".orders-internal__radio");
+    const quantityGoods = document.querySelector(".orders-internal__good-product > span");
+  
+      arrCheckbox.forEach((checkbox) => {
+        checkbox.addEventListener("click", () => {
+          quantityGoods.innerHTML = document.querySelectorAll("input._added:checked").length;
+        })
+      });
+  }
+  calcFinishedOrderCount()
+
+
 });
