@@ -116,13 +116,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const formPassword = document.querySelector(".js-form-submit");
 
       formPassword.addEventListener("submit", (el) => {
-        let currentPassword = document.querySelector(".js-current-password").value;
-        let newPassword = document.querySelector(".js-new-password").value;
+        let currentPassword = document.querySelector(".js-current-password").value;  //** const и я бы назвал currentPasswordValue, newPasswordValue
+        let newPassword = document.querySelector(".js-new-password").value; //** const и я бы назвал currentPasswordValue, newPasswordValue
         let match = true;
 
-        
-        if (currentPassword != newPassword || currentPassword == "") {
-          document.querySelector(".infoblock__mismatch").classList.add("active");
+        //** Можно вынести в общую переменную и использовать дальше в условиях
+        const infoMatch =  document.querySelector(".infoblock__match");
+        const infoMisMatch = document.querySelector(".infoblock__mismatch")
+
+        if (currentPassword != newPassword || currentPassword == "") { //** Строгая проверка !== и ===
+          document.querySelector(".infoblock__mismatch").classList.add("active"); 
           document.querySelector(".infoblock__match").classList.remove("active");
           const redBorder = document.querySelectorAll(".js-border");
 
