@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const arrInputTextarea = feedbackForms.querySelectorAll(".reviews__form-answer");
 
     arrInputTextarea.forEach((itemTextarea) => {
-      let characterCount = itemTextarea.querySelector(".js-character-count");
+      let characterCount = itemTextarea.querySelector(".js-character-count");  //** const
       itemTextarea.addEventListener("input", (el) => {
         characterCount.textContent = el.target.value.length;
       });
@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Проверка формы ответа на отзывы
   const reviewsDelegate = (el) => {
     el = el.target;
+     //** Можно вынести в общую переменную 
+    const form = el.closest(".js-open-form");
+    const item = el.closest(".reviews__item");
 
     if (el.closest(".js-open-form")) {
       el.closest(".js-open-form").classList.add("hidden");
