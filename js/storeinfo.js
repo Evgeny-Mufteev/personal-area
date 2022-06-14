@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Показать изображение при загрузке
-  let COUNT = 0;
-  const showImages = (fileInput, containerImage, boolean) => {
+  let COUNT = 0; //** названа как константа, но изменяется */
+  const showImages = (fileInput, containerImage, boolean) => { //**  название boolean неособо о чем то говорит)
 
     fileInput = document.querySelector(fileInput);
     let files = fileInput.files;
-    let BoxContainerImage = document.querySelectorAll(containerImage);
+    let BoxContainerImage = document.querySelectorAll(containerImage);  //** большая буква в названии
 
-    for (let i = 0, f; (f = files[i]); i++) {
+    for (let i = 0, f; (f = files[i]); i++) {  //** (f = files[i]) почему не объявить ниже внутри цикла?) ну и лучше file
       if (i == 4) break;
       if (!f.type.match("image.*")) continue;
 
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       readingFiles.onload = ((theFile) => {
         return function (e) {
+          //** тут скорее всего можно придумать попроще логику для вывода изображения в контейнер
           if (boolean) {
             BoxContainerImage[0].innerHTML = "<img src='" + e.target.result + "' />";
           }
@@ -63,14 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Показать список загруженных файлов
-  const showDownloadFile = (inputFile, func) => {
+  const showDownloadFile = (inputFile, func) => {  //** почему называется func, а принимает булево значение?
     document.querySelector(inputFile).addEventListener("change", function () {
+      //** const
       let formItem = this.parentNode; // родительский элемент, для того чтобы вставить список с файлами
       let ul = formItem.querySelector(".list-files");
       let str = "";
       let arrayFiles = this.files; // массив с выбранными фалами
 
-      if (arrayFiles.length == 0) {
+      if (arrayFiles.length == 0) {  //** ===
         ul.removeChild("li");
         str = "<li>Файл не выбран</li>";
       } else {
@@ -94,11 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Показать скрыть пароль
   const showHidePassword = (icon) => {
-    let arrPasswordIcon = document.querySelectorAll(icon);
+    let arrPasswordIcon = document.querySelectorAll(icon); //** const
     
       arrPasswordIcon.forEach((el) => {
         el.addEventListener("click", () => {
-          let passwordInput = el.previousElementSibling;
+          let passwordInput = el.previousElementSibling;  //** const
           if (el.classList.contains("show")) {
             passwordInput.type = "password";
             el.classList.remove("show");
@@ -116,13 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const formPassword = document.querySelector(".js-form-submit");
 
       formPassword.addEventListener("submit", (el) => {
-        let currentPassword = document.querySelector(".js-current-password").value;
-        let newPassword = document.querySelector(".js-new-password").value;
+        let currentPassword = document.querySelector(".js-current-password").value;  //** const и я бы назвал currentPasswordValue, newPasswordValue
+        let newPassword = document.querySelector(".js-new-password").value; //** const и я бы назвал currentPasswordValue, newPasswordValue
         let match = true;
 
-        
-        if (currentPassword != newPassword || currentPassword == "") {
-          document.querySelector(".infoblock__mismatch").classList.add("active");
+        //** Можно вынести в общую переменную и использовать дальше в условиях
+        const infoMatch =  document.querySelector(".infoblock__match");
+        const infoMisMatch = document.querySelector(".infoblock__mismatch")
+
+        if (currentPassword != newPassword || currentPassword == "") { //** Строгая проверка !== и ===
+          document.querySelector(".infoblock__mismatch").classList.add("active"); 
           document.querySelector(".infoblock__match").classList.remove("active");
           const redBorder = document.querySelectorAll(".js-border");
 

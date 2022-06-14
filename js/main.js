@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // меню бургер
   const dropdownMenu = (el) => {
     el = el.target;
-    const MobileMenuIcon = document.querySelector(".header__mobile-menu");
+    const MobileMenuIcon = document.querySelector(".header__mobile-menu"); //** с большой буквы обычно только классы называют
     const blockMenu = document.querySelector(".mobile-menu");
 
     if (el.closest(".header__mobile-wrap")) {
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Якорь наверх
   const anchorUp = () => {
+     //** Лучше использовать const
     let buttonAnchor = document.querySelector(".anhor");
     let header = document.querySelector(".header");
     let wrapper = document.querySelector(".wrapper");
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const delegate = (el) => {
+  const delegate = (el) => { //** delegateSorting я бы назвал функцию, а то как то обще)
     el = el.target;
     // Сортировка заказов
     if (document.querySelector(".orders__sorting-btn")) {
