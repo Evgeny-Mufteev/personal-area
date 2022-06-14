@@ -94,8 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.contains("js-confirm") ? succesPopup.classList.add("active") : сancelPopup.classList.add("active");
       overlay.classList.add("active");
       document.body.classList.add("no-scroll");
+      //** вложенный тернарник плохо  */
       el.classList.contains("js-confirm")
-        ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
+        ? (succesPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id) //** succesPopup.querySelector(".js-order-accept") и el.closest(".orders__item") можно вынести в отдельные */
         : el.classList.contains("js-cancel")
         ? (сancelPopup.querySelector(".js-order-accept").id = el.closest(".orders__item").id)
         : "";
@@ -132,17 +133,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const arrChecking = document.querySelectorAll("._added");
         const arrNotChecking = document.querySelectorAll("._not-added");
 
-        let correctInput = false;
+        let correctInput = false;   //** тут по идее могут пригодиться методы .every() .some()
+        const correctInput = arrChecking.some(input => input.checked)
         let inCorrect = false;
         let allCorrect = false;
 
-        arrChecking.forEach((input) => {
+        arrChecking.forEach((input) => { //** тут по идее могут пригодиться методы .every() .some()
           if (input.checked) {
             correctInput = true;
           }
         });
 
-        arrNotChecking.forEach((input) => {
+        arrNotChecking.forEach((input) => { //** тут по идее могут пригодиться методы .every() .some()
           if (input.checked) {
             inCorrect = true;
           } else {
