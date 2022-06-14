@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const delegate = (el) => {
+  const delegate = (el) => { //** delegateSorting я бы назвал функцию, а то как то обще)
     el = el.target;
     // Сортировка заказов
     if (document.querySelector(".orders__sorting-btn")) {
