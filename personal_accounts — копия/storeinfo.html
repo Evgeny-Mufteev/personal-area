@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header" id="header">
+        <header class="header">
             <div class="container">
                 <div class="header-top">
                     <div class="header__mobile-right">
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="header-top__logo">
-                            <a href="index.html" class="header-top__logo-link">
+                            <a href="javascript:void(0)" class="header-top__logo-link">
                                 <img src="img/logo.svg" alt="logotype">
                             </a>
                         </div>
@@ -43,13 +43,13 @@
                 <div class="header-bottom">
                     <nav class="header-bottom__menu">
                         <ul class="header-bottom__list">
-                            <li class="header-bottom__item"><a href="index.html" class="header-bottom__link">Заказы</a></li>
+                            <li class="header-bottom__item"><a href="orders.html" class="header-bottom__link">Заказы</a></li>
                             <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
                             <li class="header-bottom__item">
                                 <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
                             </li>
                             <li class="header-bottom__item">
-                                <a href="reviews.html" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                                <a href="javascript:void(0)" class="header-bottom__link">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
                             </li>
                             <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link active">Информация о магазине</a></li>
                         </ul>
@@ -61,7 +61,7 @@
                 <div class="mobile-menu__content">
                     <ul class="mobile-menu__list">
                         <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="index.html">Заказы</a>
+                            <a class="mobile-menu__link" href="orders.html">Заказы</a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
@@ -79,7 +79,7 @@
                             </svg>
                         </li>
                         <li class="mobile-menu__item">
-                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <a class="mobile-menu__link" href="javascript:void(0)">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
                             <svg class="svg-icon chevron-right">
                                 <use xlink:href="css/sprite.svg#chevron-right"></use>
                             </svg>
@@ -136,12 +136,9 @@
         
                                     <div class="infoblock__input-wrap">
                                         <div class="infoblock__row">
-                                            <label class="infoblock__label">График работы:</label>
-                                            <div class="infoblock__work-time">
-                                                <input class="infoblock__input work-time-from" min="08:00" max="22:00" type="time" value="10:00" required />
-                                                <input class="infoblock__input work-time-to" min="08:00" max="22:00" type="time" value="22:00" required />
-                                            </div>
-                                          </div>
+                                            <label class="infoblock__label" for="schedule:">График работы:</label>
+                                            <input class="infoblock__input"  id="schedule:" type="text" placeholder="9:00 - 22:00">
+                                        </div>
                                         <div class="infoblock__edit">
                                             <svg class=" icon-edit">
                                                 <use xlink:href="css/sprite.svg#icon-edit"></use>
@@ -246,7 +243,7 @@
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red">Сохранить изменения</button>
-                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
                         </div>
 
                     </form>
@@ -289,7 +286,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="infoblock__store-photos">
+                        <div class="infoblock__store-photos">
                             <div class="infoblock__banner-info">
                                 <h2 class="infoblock__subtitle">Фотографии магазина</h2>
                                 <div class="infoblock__subject-wrap">
@@ -298,75 +295,33 @@
                                 </div>
                                 <div class="infoblock__innput-file-wrap">
                                     <label class="infoblock__label-file" for="mini-img">Загрузить</label>
-                                    <input class="infoblock__input-file" type="file" name="files[]" id="mini-img" multiple="multiple" accept=".jpg, .jpeg, .png"/>
+                                    <input class="infoblock__input-file" type="file" name="files[]" id="mini-img" name="files" multiple="multiple" accept=".jpg, .jpeg, .png"/>
                                     <ul class="list-files">
                                         <li class="list-item">Файлы не выбран</li>
                                     </ul>
-                                  </div>
+                                </div>
                             </div>
                             <div class="infoblock__config">
                                 <div class="infoblock__mini-pgoto-wrap">
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <input type="image" id="image" alt="Заглушка изображения" src="img/plug_mini.jpg" />
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <input type="image" id="image2" alt="Заглушка изображения" src="img/plug_mini.jpg" />
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <input type="image" id="image3" alt="Заглушка изображения" src="img/plug_mini.jpg" />
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
                                     </div>
                                     <div class="infoblock__mini-pgoto-inner">
-                                        <input type="image" id="image4" alt="Заглушка изображения" src="img/plug_mini.jpg" />
+                                        <img src="img/plug_mini.jpg" alt="Заглушка изображения">
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
-
-                        <div class="infoblock__store-photos">
-                          <div class="infoblock__banner-info" id="test">
-                            <h2 class="infoblock__subtitle">Фотографии магазина</h2>
-                            <div class="infoblock__subject-wrap">
-                                <p class="infoblock__subject">Поддерживаемые форматы: <span>JPG, JPEG, PNG</span></p>
-                                <p class="infoblock__subject">Рекомендуемый размер: <span>624 х 496 px</span></p>
-                            </div>
-                            <div class="infoblock__innput-file-wrap">
-                                <span>Файлы не выбраны</span>
-                                <label class="infoblock__label-file js-upload" for="mini-img">Загрузить</label>
-                                <input class="infoblock__input-file" type="file" name="files[]" id="mini-img" multiple="multiple" accept=".jpg, .jpeg, .png"/>
-                            </div>
-                            <ul class="list-files aksdlakdsa">
-                            
-                            </ul>
-                          </div>
-                          <div class="infoblock__config">
-                              <div class="infoblock__mini-pgoto-wrap">
-                                  <div class="infoblock__mini-pgoto-inner" id="1">
-                                    <label class="mini-photo-label" for="image">
-                                      <!-- <input type="file" id="image"/> -->
-                                    </label>
-                                  </div>
-                                  <div class="infoblock__mini-pgoto-inner" id="2">
-                                    <label class="mini-photo-label" for="image2">
-                                      <!-- <input class="mini-photo-input" type="file" id="image2"/> -->
-                                    </label>
-                                  </div>
-                                  <div class="infoblock__mini-pgoto-inner" id="3">
-                                      <label class="mini-photo-label" for="image3">
-                                        <!-- <input class="mini-photo-input" type="file" id="image3"/> -->
-                                      </label>
-                                  </div>
-                                  <div class="infoblock__mini-pgoto-inner" id="4">
-                                      <label class="mini-photo-label" for="image4">
-                                        <!-- <input class="mini-photo-input" type="file" id="image4"/> -->
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
                         </div>
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red">Сохранить изменения</button>
-                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
                         </div>
 
                     </form>
@@ -392,20 +347,13 @@
 
                         <div class="infoblock__btn-wrap">
                             <button class="btn btn__red" type="submit">Сохранить пароль</button>
-                            <button type="button" class="btn btn__white js-data-return" onClick="window.location.reload()">Отменить</button>
+                            <button class="btn btn__white js-data-return">Отменить</button>
                         </div>
 
                     </form>
                 </div>
             </section>
         </main>
-        <div class="toTop-wrap">
-            <a href="#header" class="toTop">
-                <svg class="anhor">
-                    <use xlink:href="css/sprite.svg#anhor"></use>
-                </svg>
-            </a>
-        </div>
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
@@ -454,7 +402,11 @@
             </div>
         </footer>
         <!-- Далее модальные окна если будут -->
-
+        <div class="toTop">
+            <svg class="anhor">
+                <use xlink:href="css/sprite.svg#anhor"></use>
+            </svg>
+        </div>
     </div>
     <script src="js/main.js"></script>
     <script src="js/storeinfo.js"></script>

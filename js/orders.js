@@ -203,14 +203,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const calcFinishedOrderCount = () => {
     const arrCheckbox = document.querySelectorAll(".orders-internal__radio");
     const quantityGoods = document.querySelector(".orders-internal__good-product > span");
-  
-      arrCheckbox.forEach((checkbox) => {
-        checkbox.addEventListener("click", () => {
-          quantityGoods.innerHTML = document.querySelectorAll("input._added:checked").length;
-        })
+
+    arrCheckbox.forEach((checkbox) => {
+      checkbox.addEventListener("click", () => {
+        quantityGoods.innerHTML = document.querySelectorAll("input._added:checked").length;
       });
-  }
-  calcFinishedOrderCount()
-
-
+    });
+  };
+  calcFinishedOrderCount();
 });

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   let number = document.getElementById("number");
 
-  number.addEventListener("click", () => {
+  number.addEventListener("click", function () {
     number.addEventListener("input", mask.bind(null, number), false);
     number.addEventListener("focus", mask.bind(null, number), false);
     number.addEventListener("blur", mask.bind(null, number), false);
@@ -35,11 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Показать изображение при загрузке
   let COUNT = 0;
   const showImages = (fileInput, containerImage, boolean) => {
-    console.log(COUNT);
     fileInput = document.querySelector(fileInput);
     let files = fileInput.files;
     let BoxContainerImage = document.querySelectorAll(containerImage);
-
     for (let i = 0, f; (f = files[i]); i++) {
       if (i == 4) break;
       if (!f.type.match("image.*")) continue;
@@ -54,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!boolean) {
             BoxContainerImage[COUNT].innerHTML = "<img src='" + e.target.result + "' />";
             COUNT++;
-            console.log("count inner - " + COUNT);
           }
         };
       })(f);
@@ -64,74 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Показать список загруженных файлов
   const showDownloadFile = (inputFile, func) => {
-    let FD = new FormData();
-
     document.querySelector(inputFile).addEventListener("change", function () {
-      let formItem = document.querySelector("#test"); // родительский элемент, для того чтобы вставить список с файлами
+      let formItem = this.parentNode; // родительский элемент, для того чтобы вставить список с файлами
       let ul = formItem.querySelector(".list-files");
-      let arrayFiles = document.querySelector(inputFile).files; // массив с выбранными фалами
-      let li = [];
-      let match = false;
+      let str = "";
+      let arrayFiles = this.files; // массив с выбранными фалами
 
-      if (ul.querySelectorAll("li").length - 1 <= 4 && 4 - ul.querySelectorAll("li").length - arrayFiles.length >= 0) {
-        for (let i = 0; i < arrayFiles.length; i++) {
+      if (arrayFiles.length == 0) {
+        ul.removeChild("li");
+        str = "<li>Файл не выбран</li>";
+      } else {
+        for (let i = 0; i <= 3; i++) {
           if (arrayFiles[i]) {
-            li.push(document.createElement("li"));
-            console.log(arrayFiles[0]);
-            li[i].innerHTML = arrayFiles[i].name;
-            FD.append("file", arrayFiles[i], "UCRAINE");
+            str += "<li>" + arrayFiles[i].name + "</li>"; // <li>Имя файла</li>
           }
         }
-        match = false;
-      } else {
-        match = true;
       }
 
-      li.forEach((el) => {
-        ul.append(el);
-      });
-
+      ul.innerHTML = str;
       if (func) {
         showImages("#files", ".infoblock__main-photo-wrap", true);
-      } else if (!match && !func) {
+      } else {
         showImages("#mini-img", ".infoblock__mini-pgoto-inner", false);
       }
-
-      console.dir(FD.getAll("file"));
     });
   };
   showDownloadFile("#files", true);
   showDownloadFile("#mini-img", false);
 
-  // загрузка изображений по клику на блок
-  const imageUpload = () => {
-    const box = document.querySelector(".infoblock__mini-pgoto-wrap");
-    const arrBlocks = box.querySelectorAll(".infoblock__mini-pgoto-inner");
-    const btnLoad = document.querySelector(".js-upload");
-    const ul = document.querySelector(".aksdlakdsa");
-    arrBlocks.forEach((item) => {
-      item.addEventListener("click", (evt) => {
-        if (item.querySelector("img")) {
-          item.querySelector("img").remove();
-          item.innerHTML = "<label class='mini-photo-label'></label>";
-          ul.querySelectorAll("li")[item.id - 1].remove();
-          console.log("count do - " + COUNT);
-          let id = item.id;
-          COUNT = --id;
-          console.log("count posle - " + COUNT);
-        } else {
-          COUNT = item.id;
-          btnLoad.click();
-        }
-      });
-    });
-  };
-  imageUpload();
-
   // Показать скрыть пароль
   const showHidePassword = (icon) => {
     let arrPasswordIcon = document.querySelectorAll(icon);
-
     arrPasswordIcon.forEach((el) => {
       el.addEventListener("click", () => {
         let passwordInput = el.previousElementSibling;
@@ -148,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showHidePassword(".js-password");
 
   // Проверка паролей и сохранение
-  const checkingVerifyPassword = () => {
+  const verifyPassword = () => {
     const formPassword = document.querySelector(".js-form-submit");
 
     formPassword.addEventListener("submit", (el) => {
@@ -156,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let newPassword = document.querySelector(".js-new-password").value;
       let match = true;
 
-      if (currentPassword != newPassword || currentPassword == "") {
+      if (currentPassword != newPassword) {
         document.querySelector(".infoblock__mismatch").classList.add("active");
         document.querySelector(".infoblock__match").classList.remove("active");
         const redBorder = document.querySelectorAll(".js-border");
@@ -172,5 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return match;
     });
   };
-  checkingVerifyPassword();
+  verifyPassword();
+
+  // Обновлнение страницы при клике на кнопку отменить
+  const handlePageUpdate = (el) => {
+    el = el.target;
+
+    if (el.closest(".js-data-return")) {
+      el.location.reload();
+    }
+  };
+  document.addEventListener("click", handlePageUpdate);
+
 });

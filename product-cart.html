@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Магазин заказ внутри</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/lk_global.css">
+    <link rel="stylesheet" href="css/product-cart.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="header__mobile-right">
+                        <div class="header__mobile-wrap">
+                            <div class="header__mobile-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="header-top__logo">
+                            <a href="index.html" class="header-top__logo-link">
+                                <img src="img/logo.svg" alt="logotype">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-top__info">
+                        <div class="header-top__menu">
+                            <ul class="header-top__list">
+                                <li class="header-top__item">Инструкции</li>
+                                <li class="header-top__item">Связаться с администратором</li>
+                                <li class="header-top__item">
+                                    <svg class="svg-icon icon-exit">
+                                        <use xlink:href="css/sprite.svg#exit"></use>
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-bottom__menu">
+                        <ul class="header-bottom__list">
+                            <li class="header-bottom__item"><a href="index.html" class="header-bottom__link ">Заказы</a></li>
+                            <li class="header-bottom__item"><a href="javascript:void(0)" class="header-bottom__link">Товары и акции</a></li>
+                            <li class="header-bottom__item">
+                                <a href="notifications.html" class="header-bottom__link">Уведомления<span class="header-bottom__counter _red">(15)</span></a>
+                            </li>
+                            <li class="header-bottom__item">
+                                <a href="reviews.html" class="header-bottom__link active">Отзывы<span class="header-bottom__counter _red">(99+)</span></a>
+                            </li>
+                            <li class="header-bottom__item"><a href="storeinfo.html" class="header-bottom__link">Информация о магазине</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--mobile-menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__content">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item ">
+                            <a class="mobile-menu__link" href="index.html">Заказы</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="javascript:void(0)">Товары и акции</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg> 
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="notifications.html">Уведомления<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item active">
+                            <a class="mobile-menu__link" href="reviews.html">Отзывы<span class="header-bottom__counter _red"> (15)</span></a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a class="mobile-menu__link" href="storeinfo.html">Информация о магазине</a>
+                            <svg class="svg-icon chevron-right">
+                                <use xlink:href="css/sprite.svg#chevron-right"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-menu__info">
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Инструкции</a>
+                    <a href="javascript:void(0)" class="mobile-menu__sublink">Связаться с администратором</a>
+                </div>
+            </div>
+            <!--mobile-menu -->
+        </header>
+        <main>
+            <section class="ordered-goods">
+                <div class="container">
+                    <div class="btn-back">
+                        <a class="btn-back-link" href="javascript:void(0)">
+                            <svg class="icon-arrow-back">
+                                <use xlink:href="css/sprite.svg#icon-arrow-back"></use>
+                            </svg>
+                            <span>Назад</span>
+                        </a>
+                    </div>
+
+                    <div class="ordered-goods__item">
+
+                        <div class="ordered-goods__img">
+                            <picture>
+                                <source srcset="/img/item.webp" type="image/webp">
+                                <img src="/img/item.jpg" alt="изображение товара">
+                            </picture>
+                        </div>
+                        <div class="ordered-goods__box">
+                            <div class="ordered-goods__name">Название товара, Название бренда Название бренда</div>
+                            <div class="ordered-goods__options">Артикул: <span>012345678</span></div>
+                            <div class="ordered-goods__options">Цвет: <span>тёмно-изумрудный</span></div>
+                            <div class="ordered-goods__options">Размер: <span>XS</span></div>
+                            <div class="ordered-goods__options">Количество: <span>1 шт</span></div>
+                            <div class="ordered-goods__options">Стоимость: <span>12 500 </span></div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+        <div class="toTop-wrap">
+            <a href="#header" class="toTop">
+                <svg class="anhor">
+                    <use xlink:href="css/sprite.svg#anhor"></use>
+                </svg>
+            </a>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__container">
+                    <div class="footer__info footer__block">
+                        <p class="footer__text">2004-2021 ©Индиго LIFE — интернет-магазин одежды, обуви и аксессуаров.</p>
+                        <p class="footer__text">Все права защищены</p>
+                    </div>
+                    <div class="footer__adress footer__block">
+                        <a href="mailto:info@shop.ru" class="footer__mail">info@shop.ru</a>
+                        <p class="footer__text">603003, Нижегородская область, г.Нижний Новгород, Казанское Шоссе, дом 11</p>
+                    </div>
+                    <div class="footer__connect footer__block">
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                        <a href="tel:+71234567890" class="fooer_tel">+7 (123) 456-78-90</a>
+                    </div>
+                    <div class="footer__social footer__block">
+                        <div class="footer__social-inner">
+                            <div class="footer__link-wrap">
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-fb social">
+                                        <use xlink:href="css/sprite.svg#scial-fb"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-inst social">
+                                        <use xlink:href="css/sprite.svg#scial-inst"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-vk social">
+                                        <use xlink:href="css/sprite.svg#scial-vk"></use>
+                                    </svg>
+                                </a>
+                                <a class="footer__link" href="javascript:void(0)">
+                                    <svg class="svg-icon scial-ytb social">
+                                        <use xlink:href="css/sprite.svg#scial-ytb"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="footer__text footer__copyright">
+                                Разработано в R-top
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Далее модальные окна если будут -->
+        <div class="overlay"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

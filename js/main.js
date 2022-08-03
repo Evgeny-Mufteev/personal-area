@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
     buttonAnchor.addEventListener("click", () => {
- 
       scrollTo(header);
     });
   };
@@ -84,3 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   document.addEventListener("click", delegate);
 });
+
+// const Zhmeck = {
+
+//   name: "Жмэк",
+//   hui: "12sm",
+//   GetHui() {
+//     return this.hui;
+//   },
+//   trans: true,
+// };
+// console.log(Zhmeck.GetHui());
